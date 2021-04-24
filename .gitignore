@@ -10,3 +10,4 @@ Session.vim
 .ipynb_checkpoints
 .vim
 .vscode
+data/glove.840B.300d.txt
