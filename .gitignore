@@ -1,1 +1,12 @@
 /output
+1.4.9.1088-linux-x64.zip
+__pycache__
+chromiumNetflixScript
+nohup.out
+Session.vim
+.cenv
+.git
+.idea
+.ipynb_checkpoints
+.vim
+.vscode
