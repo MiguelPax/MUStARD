@@ -4,7 +4,11 @@ import os
 
 import numpy as np
 from sklearn.metrics import classification_report, confusion_matrix
+from sklearn import svm
 from sklearn.svm import LinearSVC
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.linear_model import LogisticRegression
+from sklearn.naive_bayes import GaussianNB
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import FunctionTransformer, StandardScaler
 
@@ -12,43 +16,117 @@ from config import CONFIG_BY_KEY
 from data_loader import DataLoader
 from data_loader import DataHelper
 
-CLF_MAP = {'lsvc': [lsvc_train, lsvc_test],
-           'lr': [lr_train, lr_test],
-           'lsvc': [lsvc_train, lsvc_test],
-           'lsvc': [lsvc_train, lsvc_test],
-           'lsvc': [lsvc_train, lsvc_test],
-def parse_args():
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--config-key',
-                        default='',
-                        choices=list(CONFIG_BY_KEY.keys()))
-    parser.add_argument('clf',
-                        choices=list(CLF_MAP.keys()))
-    return parser.parse_args()
-
-
-args = parse_args()
-print("Args:", args)
-
-
-RESULT_FILE = "./output/lsvc{}.json"
-
-# Load config
-config = CONFIG_BY_KEY[args.config_key]
-
-# Load data
-data = DataLoader(config)
-
 
 def lsvc_train(train_input, train_output):
     # clf = make_pipeline(
     # StandardScaler(),
     # svm.SVC(C=config.svm_c, gamma='scale', kernel='rbf'))
-    clf = LinearSVC(C=0.0025, max_iter=10000)
+    clf = LinearSVC(C=0.025, max_iter=10000)
     return clf.fit(train_input, train_output[:, 1].astype(int))
 
 
 def lsvc_test(clf, test_input, test_output):
+
+    y_pred = clf.predict(test_input)
+    y_true = test_output[:, 1].astype(int)
+
+    # To generate random scores
+    # y_pred = np.random.randint(2, size=len(y_pred))
+
+    # To generate majority baseline
+    # y_pred = [0]*len(y_pred)
+
+    result_string = classification_report(y_true, y_pred, digits=3)
+    # print(confusion_matrix(y_true, y_pred))
+    # print(result_string)
+    return classification_report(y_true, y_pred, output_dict=True,
+                                 digits=3), result_string
+
+
+def lr_train(train_input, train_output):
+    # lr = LogisticRegression(solver='saga',
+    #                         max_iter=10000,
+    #                         penalty='elasticnet',
+    #                         l1_ratio=1)
+    lr = LogisticRegression()
+    return lr.fit(train_input, train_output[:, 1].astype(int))
+
+
+def lr_test(clf, test_input, test_output):
+
+    y_pred = clf.predict(test_input)
+    y_true = test_output[:, 1].astype(int)
+
+    # To generate random scores
+    # y_pred = np.random.randint(2, size=len(y_pred))
+
+    # To generate majority baseline
+    # y_pred = [0]*len(y_pred)
+
+    result_string = classification_report(y_true, y_pred, digits=3)
+    print(confusion_matrix(y_true, y_pred))
+    print(result_string)
+    return classification_report(y_true, y_pred, output_dict=True,
+                                 digits=3), result_string
+
+
+def svm_train(train_input, train_output):
+    clf = make_pipeline(
+        StandardScaler() if config.svm_scale else FunctionTransformer(
+            lambda x: x, validate=False),
+        svm.SVC(C=config.svm_c, gamma='scale', kernel='rbf'))
+
+    return clf.fit(train_input, np.argmax(train_output, axis=1))
+
+
+def svm_test(clf, test_input, test_output):
+
+    probas = clf.predict(test_input)
+    y_pred = probas
+    y_true = np.argmax(test_output, axis=1)
+
+    # To generate random scores
+    # y_pred = np.random.randint(2, size=len(y_pred))
+
+    # To generate majority baseline
+    # y_pred = [0]*len(y_pred)
+
+    result_string = classification_report(y_true, y_pred, digits=3)
+    # print(confusion_matrix(y_true, y_pred))
+    # print(result_string)
+    return classification_report(y_true, y_pred, output_dict=True,
+                                 digits=3), result_string
+
+
+def gauss_train(train_input, train_output):
+    gnb = GaussianNB()
+    return gnb.fit(train_input, train_output[:, 1].astype(int))
+
+
+def gauss_test(clf, test_input, test_output):
+
+    y_pred = clf.predict(test_input)
+    y_true = test_output[:, 1].astype(int)
+
+    # To generate random scores
+    # y_pred = np.random.randint(2, size=len(y_pred))
+
+    # To generate majority baseline
+    # y_pred = [0]*len(y_pred)
+
+    result_string = classification_report(y_true, y_pred, digits=3)
+    # print(confusion_matrix(y_true, y_pred))
+    # print(result_string)
+    return classification_report(y_true, y_pred, output_dict=True,
+                                 digits=3), result_string
+
+
+def rfc_train(train_input, train_output):
+    rfc = RandomForestClassifier(n_estimators=10, random_state=0)
+    return rfc.fit(train_input, train_output[:, 1].astype(int))
+
+
+def rfc_test(clf, test_input, test_output):
 
     y_pred = clf.predict(test_input)
     y_true = test_output[:, 1].astype(int)
@@ -162,12 +240,12 @@ def trainSpeakerIndependent(model_name=None):
 
     (train_index, test_index) = data.getSpeakerIndependent()
     train_input, train_output, test_input, test_output = trainIO(
-        train_index, test_index)
+        test_index, test_index)
 
-    train_func = CLF_MAP[args.clf][0](train_input, train_output)
-    test_func = CLF_MAP[args.clf][1](train_input, train_output)
-    clf = CLF_MAP[args.clf][0](train_input, train_output)
-    lsvc_test(clf, test_input, test_output)
+    train_func = CLF_MAP[args.clf][0]
+    test_func = CLF_MAP[args.clf][1]
+    clf = train_func(train_input, train_output)
+    test_func(clf, test_input, test_output)
 
 
 def trainSpeakerDependent(model_name=None):
@@ -187,8 +265,11 @@ def trainSpeakerDependent(model_name=None):
         train_input, train_output, test_input, test_output = trainIO(
             train_index, test_index)
 
-        clf = lsvc_train(train_input, train_output)
-        result_dict, result_str = lsvc_test(clf, test_input, test_output)
+        train_func = CLF_MAP[args.clf][0]
+        test_func = CLF_MAP[args.clf][1]
+        clf = train_func(train_input, train_output)
+        test_func(clf, train_input, train_output)
+        result_dict, result_str = test_func(clf, test_input, test_output)
 
         results.append(result_dict)
 
@@ -220,11 +301,44 @@ def printResult(model_name=None):
                     result["weighted avg"]["f1-score"]))
     print("#" * 20)
     print("Avg :")
-    print(
-        "Weighted Precision: {:.3f}  Weighted Recall: {:.3f}  Weighted F score: {:.3f}"
-        .format(np.mean(weighted_precision), np.mean(weighted_recall),
-                np.mean(weighted_fscores)))
+    print("Weighted Precision: {:.3f}  Weighted Recall: {:.3f}\
+        Weighted F score: {:.3f}".format(np.mean(weighted_precision),
+                                         np.mean(weighted_recall),
+                                         np.mean(weighted_fscores)))
 
+
+CLF_MAP = {
+    'lsvc': [lsvc_train, lsvc_test],
+    'lr': [lr_train, lr_test],
+    'rfc': [rfc_train, rfc_test],
+    'gauss': [gauss_train, gauss_test],
+    'svm': [svm_train, svm_test]
+}
+
+# a=CLF_MAP['lr'][0]
+
+# print(a(train_input, train_output))
+
+
+def parse_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--config-key',
+                        default='',
+                        choices=list(CONFIG_BY_KEY.keys()))
+    parser.add_argument('clf', choices=list(CLF_MAP.keys()))
+    return parser.parse_args()
+
+
+args = parse_args()
+print("Args:", args)
+
+RESULT_FILE = "./output/lsvc{}.json"
+
+# Load config
+config = CONFIG_BY_KEY[args.config_key]
+
+# Load data
+data = DataLoader(config)
 
 if __name__ == "__main__":
 

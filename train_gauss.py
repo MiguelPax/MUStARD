@@ -206,10 +206,10 @@ def printResult(model_name=None):
                     result["weighted avg"]["f1-score"]))
     print("#" * 20)
     print("Avg :")
-    print(
-        "Weighted Precision: {:.3f}  Weighted Recall: {:.3f}  Weighted F score: {:.3f}"
-        .format(np.mean(weighted_precision), np.mean(weighted_recall),
-                np.mean(weighted_fscores)))
+    print("Weighted Precision: {:.3f}  Weighted Recall: {:.3f} \
+          Weighted F score: {:.3f}".format(np.mean(weighted_precision),
+                                           np.mean(weighted_recall),
+                                           np.mean(weighted_fscores)))
 
 
 if __name__ == "__main__":
