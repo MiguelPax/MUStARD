@@ -28,7 +28,7 @@ def lsvc_train(train_input, train_output):
     # clf = make_pipeline(
     # StandardScaler(),
     # svm.SVC(C=config.svm_c, gamma='scale', kernel='rbf'))
-    clf = LinearSVC(C=0.025, max_iter=10000)
+    clf = LinearSVC(C=config.lsvc_c, max_iter=config.lsvc_max_iter)
     return clf.fit(train_input, train_output[:, 1].astype(int))
 
 
@@ -81,7 +81,9 @@ def svm_train(train_input, train_output):
     clf = make_pipeline(
         StandardScaler() if config.svm_scale else FunctionTransformer(
             lambda x: x, validate=False),
-        svm.SVC(C=config.svm_c, gamma='scale', kernel='rbf'))
+        svm.SVC(C=config.svm_c,
+                gamma=config.svm_gamma,
+                kernel=config.svm_kernel))
 
     return clf.fit(train_input, np.argmax(train_output, axis=1))
 
@@ -257,8 +259,9 @@ def trainSpeakerIndependent(model_name=None):
 
 def trainSpeakerDependent(model_name=None):
 
-    wandb.init(name=args.clf + "-dft", project="multimodal-sarcasm")
+    wandb.init(name=config.run_name, project="multimodal-sarcasm")
     wandb.config.update(args)
+    # wandb.config.svm_c=config.svm_c
 
     # Load data
     data = DataLoader(config)
@@ -276,7 +279,7 @@ def trainSpeakerDependent(model_name=None):
         train_input, train_output, test_input, test_output = trainIO(
             train_index, test_index)
 
-        train_func = CLF_MAP[args.clf][0]
+        train_func = CLF_MAP[config.model][0]
         # test_func = CLF_MAP[args.clf][1]
         clf = train_func(train_input, train_output)
 
@@ -373,7 +376,7 @@ def parse_args():
     parser.add_argument('--config-key',
                         default='',
                         choices=list(CONFIG_BY_KEY.keys()))
-    parser.add_argument('clf', choices=list(CLF_MAP.keys()))
+    # parser.add_argument('clf', choices=list(CLF_MAP.keys()))
     return parser.parse_args()
 
 

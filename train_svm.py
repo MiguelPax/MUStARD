@@ -180,7 +180,7 @@ def trainSpeakerDependent(model_name=None):
         train_input, train_output, test_input, test_output = trainIO(
             train_index, test_index)
 
-        clf = svm_train(train_input, train_output)
+        clf =   svm_train(train_input, train_output)
         result_dict, result_str = svm_test(clf, test_input, test_output)
 
         results.append(result_dict)

@@ -1,6 +1,5 @@
 class Config:
 
-    model = "SVM"
     runs = 1  # No. of runs of experiments
 
     # Training modes
@@ -24,8 +23,16 @@ class Config:
     batch_size = 16
     val_split = 0.1  # Percentage of data in validation set from training data
 
+    model = 'lsvc'
+    run_name = model + '_' + 'c=0.025'
+
     svm_c = 10.0
     svm_scale = True
+    svm_gamma = 'scale'
+    svm_kernel = 'rbf'
+
+    lsvc_c = 0.025
+    lsvc_max_iter = 10000
 
 
 class SpeakerDependentTConfig(Config):
@@ -65,7 +72,7 @@ class SpeakerDependentTAVConfig(Config):
     use_target_text = True
     use_target_audio = True
     use_target_video = True
-    svm_c = 10.0
+    # svm_c = 10.0
 
 
 class SpeakerDependentTPlusContext(SpeakerDependentTConfig):
