@@ -3,7 +3,7 @@ import json
 import os
 
 import wandb
-from wandb.keras import WandbCallback
+# from wandb.keras import WandbCallback
 
 import numpy as np
 from sklearn.metrics import classification_report, confusion_matrix
@@ -257,11 +257,12 @@ def trainSpeakerIndependent(model_name=None):
 
 def trainSpeakerDependent(model_name=None):
 
-    wandb.init(project="multimodal-sarcasm")
+    wandb.init(name=args.clf + "-dft", project="multimodal-sarcasm")
+    wandb.config.update(args)
 
     # Load data
     data = DataLoader(config)
-    labels = ['Non-Sarcastic', 'Sarcastic']
+    # labels = ['Non-Sarcastic', 'Sarcastic']
 
     # Iterating over each fold
     results = []
@@ -280,9 +281,9 @@ def trainSpeakerDependent(model_name=None):
         clf = train_func(train_input, train_output)
 
         y_pred = clf.predict(test_input)
-        y_probas = clf.predict_proba(test_input)
+        # y_probas = clf.predict_proba(test_input)
         y_test = test_output[:, 1].astype(int)
-        y_train = train_output[:, 1].astype(int)
+        # y_train = train_output[:, 1].astype(int)
         # importances = clf.feature_importances_
         # indices = np.argsort(importances)[::-1]
 
@@ -301,18 +302,17 @@ def trainSpeakerDependent(model_name=None):
                                             digits=3)
 
         results.append(result_dict)
-        wandb.sklearn.plot_classifier(clf,
-                                      train_input,
-                                      test_input,
-                                      y_train,
-                                      y_test,
-                                      y_pred,
-                                      y_probas,
-                                      labels,
-                                      model_name='args.clf',
-                                      feature_names=None)
-        break
-
+        # wandb.sklearn.plot_classifier(clf,
+        #                               train_input,
+        #                               test_input,
+        #                               y_train,
+        #                               y_test,
+        #                               y_pred,
+        #                               y_probas,
+        #                               labels,
+        #                               model_name='args.clf',
+        #                               feature_names=None)
+        #
     # Dumping result to output
     if not os.path.exists(os.path.dirname(RESULT_FILE)):
         os.makedirs(os.path.dirname(RESULT_FILE))
@@ -341,10 +341,18 @@ def printResult(model_name=None):
                     result["weighted avg"]["f1-score"]))
     print("#" * 20)
     print("Avg :")
+    precision = np.mean(weighted_precision)
+    recall = np.mean(weighted_recall)
+    fscore = np.mean(weighted_fscores)
+
+    wandb.log({
+        'weighted_precision': precision,
+        'weighted_recall': recall,
+        'weighted_fscore': fscore
+    })
+
     print("Weighted Precision: {:.3f}  Weighted Recall: {:.3f}\
-        Weighted F score: {:.3f}".format(np.mean(weighted_precision),
-                                         np.mean(weighted_recall),
-                                         np.mean(weighted_fscores)))
+        Weighted F score: {:.3f}".format(precision, recall, fscore))
 
 
 CLF_MAP = {
