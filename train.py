@@ -2,6 +2,9 @@ import argparse
 import json
 import os
 
+import wandb
+from wandb.keras import WandbCallback
+
 import numpy as np
 from sklearn.metrics import classification_report, confusion_matrix
 from sklearn import svm
@@ -15,6 +18,10 @@ from sklearn.preprocessing import FunctionTransformer, StandardScaler
 from config import CONFIG_BY_KEY
 from data_loader import DataLoader
 from data_loader import DataHelper
+
+# %%wandb
+wandb.login()
+WANDB_NOTEBOOK_NAME = 'train.py'
 
 
 def lsvc_train(train_input, train_output):
@@ -250,8 +257,11 @@ def trainSpeakerIndependent(model_name=None):
 
 def trainSpeakerDependent(model_name=None):
 
+    wandb.init(project="multimodal-sarcasm")
+
     # Load data
     data = DataLoader(config)
+    labels = ['Non-Sarcastic', 'Sarcastic']
 
     # Iterating over each fold
     results = []
@@ -266,12 +276,42 @@ def trainSpeakerDependent(model_name=None):
             train_index, test_index)
 
         train_func = CLF_MAP[args.clf][0]
-        test_func = CLF_MAP[args.clf][1]
+        # test_func = CLF_MAP[args.clf][1]
         clf = train_func(train_input, train_output)
-        test_func(clf, train_input, train_output)
-        result_dict, result_str = test_func(clf, test_input, test_output)
+
+        y_pred = clf.predict(test_input)
+        y_probas = clf.predict_proba(test_input)
+        y_test = test_output[:, 1].astype(int)
+        y_train = train_output[:, 1].astype(int)
+        # importances = clf.feature_importances_
+        # indices = np.argsort(importances)[::-1]
+
+        # To generate random scores
+        # y_pred = np.random.randint(2, size=len(y_pred))
+
+        # To generate majority baseline
+        # y_pred = [0]*len(y_pred)
+
+        # result_str = classification_report(y_true, y_pred, digits=3)
+        # print(confusion_matrix(y_true, y_pred))
+        # print(result_string)
+        result_dict = classification_report(y_test,
+                                            y_pred,
+                                            output_dict=True,
+                                            digits=3)
 
         results.append(result_dict)
+        wandb.sklearn.plot_classifier(clf,
+                                      train_input,
+                                      test_input,
+                                      y_train,
+                                      y_test,
+                                      y_pred,
+                                      y_probas,
+                                      labels,
+                                      model_name='args.clf',
+                                      feature_names=None)
+        break
 
     # Dumping result to output
     if not os.path.exists(os.path.dirname(RESULT_FILE)):

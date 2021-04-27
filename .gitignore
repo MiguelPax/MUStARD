@@ -11,3 +11,4 @@ Session.vim
 .vim
 .vscode
 data/glove.840B.300d.txt
+wandb.ipynb

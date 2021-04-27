@@ -1,0 +1,129 @@
+2021-04-27 13:05:58,834 INFO    MainThread:310060 [wandb_setup.py:_flush():69] setting env: {}
+2021-04-27 13:05:58,835 INFO    MainThread:310060 [wandb_setup.py:_flush():69] setting login settings: {}
+2021-04-27 13:05:58,835 INFO    MainThread:310060 [wandb_setup.py:_flush():69] setting login settings: {}
+2021-04-27 13:05:58,835 INFO    MainThread:310060 [wandb_init.py:_log_setup():336] Logging user logs to /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210427_130558-3jdsmiy6/logs/debug.log
+2021-04-27 13:05:58,835 INFO    MainThread:310060 [wandb_init.py:_log_setup():337] Logging internal logs to /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210427_130558-3jdsmiy6/logs/debug-internal.log
+2021-04-27 13:05:58,835 INFO    MainThread:310060 [wandb_init.py:init():369] calling init triggers
+2021-04-27 13:05:58,835 INFO    MainThread:310060 [wandb_init.py:init():376] wandb.init called with sweep_config: {}
+config: {}
+2021-04-27 13:05:58,835 INFO    MainThread:310060 [wandb_init.py:init():418] starting backend
+2021-04-27 13:05:58,835 INFO    MainThread:310060 [backend.py:_multiprocessing_setup():71] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2021-04-27 13:05:58,839 INFO    MainThread:310060 [backend.py:ensure_launched():123] starting backend process...
+2021-04-27 13:05:58,881 INFO    MainThread:310060 [backend.py:ensure_launched():128] started backend process with pid: 310817
+2021-04-27 13:05:58,884 INFO    MainThread:310060 [wandb_init.py:init():423] backend started and connected
+2021-04-27 13:05:58,890 INFO    MainThread:310060 [wandb_init.py:init():465] updated telemetry
+2021-04-27 13:05:58,892 INFO    MainThread:310060 [wandb_init.py:init():484] communicating current version
+2021-04-27 13:06:00,230 INFO    MainThread:310060 [wandb_init.py:init():489] got version response 
+2021-04-27 13:06:00,230 INFO    MainThread:310060 [wandb_init.py:init():497] communicating run to backend with 30 second timeout
+2021-04-27 13:06:00,543 INFO    MainThread:310060 [wandb_init.py:init():522] starting run threads in backend
+2021-04-27 13:06:05,562 INFO    MainThread:310060 [wandb_run.py:_console_start():1524] atexit reg
+2021-04-27 13:06:05,563 INFO    MainThread:310060 [wandb_run.py:_redirect():1371] redirect: SettingsConsole.REDIRECT
+2021-04-27 13:06:05,563 INFO    MainThread:310060 [wandb_run.py:_redirect():1376] Redirecting console.
+2021-04-27 13:06:05,575 INFO    MainThread:310060 [wandb_run.py:_redirect():1438] Redirects installed.
+2021-04-27 13:06:05,575 INFO    MainThread:310060 [wandb_init.py:init():546] run started, returning control to user process
+2021-04-27 13:09:05,879 INFO    MainThread:310060 [wandb_run.py:_config_callback():749] config_cb ('_wandb', 'viz', 'feature_importances') {'id': 'wandb/feature_importances/v1', 'historyFieldSettings': {'key': 'feature_importances', 'x-axis': '_step'}} None
+2021-04-27 13:09:22,936 INFO    MainThread:310060 [wandb_run.py:_config_callback():749] config_cb ('_wandb', 'viz', 'learning_curve') {'id': 'wandb/learning_curve/v1', 'historyFieldSettings': {'key': 'learning_curve', 'x-axis': '_step'}} None
+2021-04-27 13:09:26,327 INFO    MainThread:310060 [wandb_run.py:_config_callback():749] config_cb ('_wandb', 'viz', 'confusion_matrix') {'id': 'wandb/confusion_matrix/v1', 'historyFieldSettings': {'key': 'confusion_matrix', 'x-axis': '_step'}} None
+2021-04-27 13:09:32,584 INFO    MainThread:310060 [wandb_run.py:_config_callback():749] config_cb ('_wandb', 'viz', 'summary_metrics') {'id': 'wandb/metrics/v1', 'historyFieldSettings': {'key': 'summary_metrics', 'x-axis': '_step'}} None
+2021-04-27 13:09:36,019 INFO    MainThread:310060 [wandb_run.py:_config_callback():749] config_cb ('_wandb', 'viz', 'class_proportions') {'id': 'wandb/class_proportions/v1', 'historyFieldSettings': {'key': 'class_proportions', 'x-axis': '_step'}} None
+2021-04-27 13:09:41,262 INFO    MainThread:310060 [wandb_run.py:_config_callback():749] config_cb ('_wandb', 'viz', 'calibration_curve') {'id': 'wandb/calibration/v1', 'historyFieldSettings': {'key': 'calibration_curve', 'x-axis': '_step'}} None
+2021-04-27 13:09:44,696 INFO    MainThread:310060 [wandb_run.py:_config_callback():749] config_cb ('_wandb', 'viz', 'roc') {'id': 'wandb/roc/v1', 'historyFieldSettings': {'key': 'roc', 'x-axis': '_step'}} None
+2021-04-27 13:09:48,299 INFO    MainThread:310060 [wandb_run.py:_config_callback():749] config_cb ('_wandb', 'viz', 'precision_recall') {'id': 'wandb/pr_curve/v1', 'historyFieldSettings': {'key': 'precision_recall', 'x-axis': '_step'}} None
+2021-04-27 13:09:52,693 INFO    MainThread:310060 [wandb_run.py:_atexit_cleanup():1494] got exitcode: 0
+2021-04-27 13:09:52,709 INFO    MainThread:310060 [wandb_run.py:_restore():1466] restore
+2021-04-27 13:09:55,000 INFO    MainThread:310060 [wandb_run.py:_wait_for_finish():1616] got exit ret: file_counts {
+  wandb_count: 1
+  media_count: 8
+  artifact_count: 10
+}
+pusher_stats {
+  uploaded_bytes: 136313
+  total_bytes: 136313
+}
+
+2021-04-27 13:09:55,607 INFO    MainThread:310060 [wandb_run.py:_wait_for_finish():1616] got exit ret: file_counts {
+  wandb_count: 3
+  media_count: 8
+  artifact_count: 10
+}
+pusher_stats {
+  uploaded_bytes: 136313
+  total_bytes: 138985
+}
+
+2021-04-27 13:09:55,976 INFO    MainThread:310060 [wandb_run.py:_wait_for_finish():1616] got exit ret: file_counts {
+  wandb_count: 6
+  media_count: 8
+  artifact_count: 10
+}
+pusher_stats {
+  uploaded_bytes: 136313
+  total_bytes: 148234
+}
+
+2021-04-27 13:09:56,085 INFO    MainThread:310060 [wandb_run.py:_wait_for_finish():1616] got exit ret: file_counts {
+  wandb_count: 6
+  media_count: 8
+  artifact_count: 10
+}
+pusher_stats {
+  uploaded_bytes: 148234
+  total_bytes: 148234
+}
+
+2021-04-27 13:09:56,188 INFO    MainThread:310060 [wandb_run.py:_wait_for_finish():1616] got exit ret: file_counts {
+  wandb_count: 6
+  media_count: 8
+  artifact_count: 10
+}
+pusher_stats {
+  uploaded_bytes: 148234
+  total_bytes: 148234
+}
+
+2021-04-27 13:09:56,292 INFO    MainThread:310060 [wandb_run.py:_wait_for_finish():1616] got exit ret: file_counts {
+  wandb_count: 6
+  media_count: 8
+  artifact_count: 10
+}
+pusher_stats {
+  uploaded_bytes: 148234
+  total_bytes: 148234
+}
+
+2021-04-27 13:09:56,394 INFO    MainThread:310060 [wandb_run.py:_wait_for_finish():1616] got exit ret: file_counts {
+  wandb_count: 6
+  media_count: 8
+  artifact_count: 10
+}
+pusher_stats {
+  uploaded_bytes: 148234
+  total_bytes: 148234
+}
+
+2021-04-27 13:09:56,496 INFO    MainThread:310060 [wandb_run.py:_wait_for_finish():1616] got exit ret: file_counts {
+  wandb_count: 6
+  media_count: 8
+  artifact_count: 10
+}
+pusher_stats {
+  uploaded_bytes: 148234
+  total_bytes: 148234
+}
+
+2021-04-27 13:09:56,600 INFO    MainThread:310060 [wandb_run.py:_wait_for_finish():1616] got exit ret: done: true
+exit_result {
+}
+file_counts {
+  wandb_count: 6
+  media_count: 8
+  artifact_count: 10
+}
+pusher_stats {
+  uploaded_bytes: 148234
+  total_bytes: 148234
+}
+
+2021-04-27 13:10:00,592 INFO    MainThread:310060 [wandb_run.py:_show_summary():1771] rendering summary
+2021-04-27 13:10:00,593 INFO    MainThread:310060 [wandb_run.py:_show_history():1809] rendering history
+2021-04-27 13:10:00,596 INFO    MainThread:310060 [wandb_run.py:_show_files():1838] logging synced files

@@ -1,0 +1,1 @@
+{"columns": ["Predicted", "Actual", "Count"], "data": [["Non-Sarcastic", "Non-Sarcastic", 50], ["Non-Sarcastic", "Sarcastic", 25], ["Sarcastic", "Non-Sarcastic", 20], ["Sarcastic", "Sarcastic", 43]]}
