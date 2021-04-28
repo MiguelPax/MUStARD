@@ -1,0 +1,40 @@
+2021-04-28 18:35:17,708 INFO    MainThread:1783364 [internal.py:wandb_internal():91] W&B internal server running at pid: 1783364, started at: 2021-04-28 18:35:17.708418
+2021-04-28 18:35:17,710 DEBUG   HandlerThread:1783364 [handler.py:handle_request():120] handle_request: check_version
+2021-04-28 18:35:17,711 INFO    WriterThread:1783364 [datastore.py:open_for_write():77] open: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210428_183516-axkz03mb/run-axkz03mb.wandb
+2021-04-28 18:35:17,713 DEBUG   SenderThread:1783364 [sender.py:send():160] send: header
+2021-04-28 18:35:17,713 DEBUG   SenderThread:1783364 [sender.py:send():160] send: request
+2021-04-28 18:35:17,713 DEBUG   SenderThread:1783364 [sender.py:send_request():169] send_request: check_version
+2021-04-28 18:35:17,864 DEBUG   SenderThread:1783364 [sender.py:send():160] send: run
+2021-04-28 18:35:18,251 INFO    SenderThread:1783364 [sender.py:_start_run_threads():654] run started: axkz03mb with start time 1619627716
+2021-04-28 18:35:18,260 DEBUG   SenderThread:1783364 [sender.py:send():160] send: summary
+2021-04-28 18:35:18,260 INFO    SenderThread:1783364 [sender.py:_save_file():781] saving file wandb-summary.json with policy end
+2021-04-28 18:35:18,278 DEBUG   HandlerThread:1783364 [handler.py:handle_request():120] handle_request: run_start
+2021-04-28 18:35:20,367 DEBUG   HandlerThread:1783364 [meta.py:__init__():39] meta init
+2021-04-28 18:35:20,367 DEBUG   HandlerThread:1783364 [meta.py:__init__():53] meta init done
+2021-04-28 18:35:20,367 DEBUG   HandlerThread:1783364 [meta.py:probe():210] probe
+2021-04-28 18:35:20,374 DEBUG   HandlerThread:1783364 [meta.py:_setup_git():200] setup git
+2021-04-28 18:35:20,406 DEBUG   HandlerThread:1783364 [meta.py:_setup_git():207] setup git done
+2021-04-28 18:35:20,406 DEBUG   HandlerThread:1783364 [meta.py:_save_code():89] save code
+2021-04-28 18:35:20,426 DEBUG   HandlerThread:1783364 [meta.py:_save_code():110] save code done
+2021-04-28 18:35:20,426 DEBUG   HandlerThread:1783364 [meta.py:_save_patches():127] save patches
+2021-04-28 18:35:20,505 DEBUG   HandlerThread:1783364 [meta.py:_save_patches():169] save patches done
+2021-04-28 18:35:20,506 DEBUG   HandlerThread:1783364 [meta.py:_save_pip():57] save pip
+2021-04-28 18:35:20,506 DEBUG   HandlerThread:1783364 [meta.py:_save_pip():71] save pip done
+2021-04-28 18:35:20,506 DEBUG   HandlerThread:1783364 [meta.py:_save_conda():78] save conda
+2021-04-28 18:35:24,997 WARNING MainThread:1783364 [internal.py:wandb_internal():146] Internal process interrupt: 1
+2021-04-28 18:35:25,165 DEBUG   HandlerThread:1783364 [meta.py:_save_conda():86] save conda done
+2021-04-28 18:35:25,166 DEBUG   HandlerThread:1783364 [meta.py:probe():252] probe done
+2021-04-28 18:35:25,195 DEBUG   HandlerThread:1783364 [handler.py:handle_request():120] handle_request: status
+2021-04-28 18:35:25,196 DEBUG   SenderThread:1783364 [sender.py:send():160] send: request
+2021-04-28 18:35:25,196 DEBUG   SenderThread:1783364 [sender.py:send_request():169] send_request: status
+2021-04-28 18:35:25,623 DEBUG   SenderThread:1783364 [sender.py:send():160] send: config
+2021-04-28 18:35:25,934 DEBUG   SenderThread:1783364 [sender.py:send():160] send: files
+2021-04-28 18:35:25,935 INFO    SenderThread:1783364 [sender.py:_save_file():781] saving file wandb-metadata.json with policy now
+2021-04-28 18:35:25,935 INFO    SenderThread:1783364 [sender.py:_save_file():781] saving file code/train.py with policy now
+2021-04-28 18:35:25,937 INFO    SenderThread:1783364 [sender.py:_save_file():781] saving file diff.patch with policy now
+2021-04-28 18:35:26,201 WARNING MainThread:1783364 [internal.py:wandb_internal():146] Internal process interrupt: 2
+2021-04-28 18:35:26,201 ERROR   MainThread:1783364 [internal.py:wandb_internal():149] Internal process interrupted.
+2021-04-28 18:35:26,509 INFO    WriterThread:1783364 [datastore.py:close():258] close: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210428_183516-axkz03mb/run-axkz03mb.wandb
+2021-04-28 18:35:26,510 INFO    HandlerThread:1783364 [handler.py:finish():624] shutting down handler
+2021-04-28 18:35:26,938 INFO    SenderThread:1783364 [sender.py:finish():884] shutting down sender
+2021-04-28 18:35:28,975 INFO    MainThread:1783364 [internal.py:handle_exit():78] Internal process exited

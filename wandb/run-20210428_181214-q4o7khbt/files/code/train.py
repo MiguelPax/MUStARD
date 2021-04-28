@@ -1,19 +1,21 @@
 import argparse
 import json
 import os
-import re
 
 import IPython
+
+import wandb
+# from wandb.keras import WandbCallback
+
 import numpy as np
+from sklearn.metrics import classification_report, confusion_matrix
 from sklearn import svm
+from sklearn.svm import LinearSVC
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import classification_report, confusion_matrix
 from sklearn.naive_bayes import GaussianNB
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import FunctionTransformer, StandardScaler
-from sklearn.svm import LinearSVC
-import wandb
 
 import config
 from config import CONFIG_BY_KEY
@@ -263,19 +265,15 @@ def trainSpeakerDependent(model_name=None):
 
     print(vars(run_config))
 
-    config_params = {
-        k: v
-        for k, v in config.Config.__dict__.items()
-        if not (k.startswith('__') and k.endswith('__'))
-    }
-    # IPython.embed()
+    config_files = {k: v for k, v in config.Config.__dict__
+                    if not (k.startswith('__') and k.endswith('__'))}
+
+    IPython.embed()
     # breakpoint()
-    wandb.init(config=config_params, project="multimodal-sarcasm")
+    wandb.init(name=run_config.run_name,
+               config=vars(run_config),
+               project="multimodal-sarcasm")
     wandb.config.update({"config_key": args.config_key})
-    wandb.run.name = run_config.run_name + re.sub(r'^.*?-', '-',
-                                                  wandb.run.name)
-    print(wandb.run.name)
-    breakpoint()
     # wandb.config.svm_c=config.svm_c
 
     # Load data

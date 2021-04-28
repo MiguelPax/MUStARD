@@ -1,21 +1,20 @@
 import argparse
 import json
 import os
-import re
 
-import IPython
+import wandb
+# from wandb.keras import WandbCallback
+
 import numpy as np
+from sklearn.metrics import classification_report, confusion_matrix
 from sklearn import svm
+from sklearn.svm import LinearSVC
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import classification_report, confusion_matrix
 from sklearn.naive_bayes import GaussianNB
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import FunctionTransformer, StandardScaler
-from sklearn.svm import LinearSVC
-import wandb
 
-import config
 from config import CONFIG_BY_KEY
 from data_loader import DataLoader
 from data_loader import DataHelper
@@ -29,7 +28,7 @@ def lsvc_train(train_input, train_output):
     # clf = make_pipeline(
     # StandardScaler(),
     # svm.SVC(C=config.svm_c, gamma='scale', kernel='rbf'))
-    clf = LinearSVC(C=run_config.lsvc_c, max_iter=run_config.lsvc_max_iter)
+    clf = LinearSVC(C=config.lsvc_c, max_iter=config.lsvc_max_iter)
     return clf.fit(train_input, train_output[:, 1].astype(int))
 
 
@@ -80,11 +79,11 @@ def lr_test(clf, test_input, test_output):
 
 def svm_train(train_input, train_output):
     clf = make_pipeline(
-        StandardScaler() if run_config.svm_scale else FunctionTransformer(
+        StandardScaler() if config.svm_scale else FunctionTransformer(
             lambda x: x, validate=False),
-        svm.SVC(C=run_config.svm_c,
-                gamma=run_config.svm_gamma,
-                kernel=run_config.svm_kernel))
+        svm.SVC(C=config.svm_c,
+                gamma=config.svm_gamma,
+                kernel=config.svm_kernel))
 
     return clf.fit(train_input, np.argmax(train_output, axis=1))
 
@@ -161,14 +160,14 @@ def trainIO(train_index, test_index):
     test_input, test_output = data.getSplit(test_index)
 
     datahelper = DataHelper(train_input, train_output, test_input, test_output,
-                            run_config, data)
+                            config, data)
 
     train_input = np.empty((len(train_input), 0))
     test_input = np.empty((len(test_input), 0))
 
-    if run_config.use_target_text:
+    if config.use_target_text:
 
-        if run_config.use_bert:
+        if config.use_bert:
             train_input = np.concatenate(
                 [train_input,
                  datahelper.getTargetBertFeatures(mode='train')],
@@ -195,7 +194,7 @@ def trainIO(train_index, test_index):
             ],
                                         axis=1)
 
-    if run_config.use_target_video:
+    if config.use_target_video:
         train_input = np.concatenate(
             [train_input,
              datahelper.getTargetVideoPool(mode='train')], axis=1)
@@ -203,7 +202,7 @@ def trainIO(train_index, test_index):
             [test_input,
              datahelper.getTargetVideoPool(mode='test')], axis=1)
 
-    if run_config.use_target_audio:
+    if config.use_target_audio:
         train_input = np.concatenate(
             [train_input,
              datahelper.getTargetAudioPool(mode='train')], axis=1)
@@ -217,15 +216,15 @@ def trainIO(train_index, test_index):
 
     # Aux input
 
-    if run_config.use_author:
+    if config.use_author:
         train_input_author = datahelper.getAuthor(mode="train")
         test_input_author = datahelper.getAuthor(mode="test")
 
         train_input = np.concatenate([train_input, train_input_author], axis=1)
         test_input = np.concatenate([test_input, test_input_author], axis=1)
 
-    if run_config.use_context:
-        if run_config.use_bert:
+    if config.use_context:
+        if config.use_bert:
             train_input_context = datahelper.getContextBertFeatures(
                 mode="train")
             test_input_context = datahelper.getContextBertFeatures(mode="test")
@@ -238,16 +237,15 @@ def trainIO(train_index, test_index):
         test_input = np.concatenate([test_input, test_input_context], axis=1)
 
     train_output = datahelper.oneHotOutput(mode="train",
-                                           size=run_config.num_classes)
-    test_output = datahelper.oneHotOutput(mode="test",
-                                          size=run_config.num_classes)
+                                           size=config.num_classes)
+    test_output = datahelper.oneHotOutput(mode="test", size=config.num_classes)
 
     return train_input, train_output, test_input, test_output
 
 
 def trainSpeakerIndependent(model_name=None):
 
-    run_config.fold = "SI"
+    config.fold = "SI"
 
     (train_index, test_index) = data.getSpeakerIndependent()
     train_input, train_output, test_input, test_output = trainIO(
@@ -261,25 +259,14 @@ def trainSpeakerIndependent(model_name=None):
 
 def trainSpeakerDependent(model_name=None):
 
-    print(vars(run_config))
-
-    config_params = {
-        k: v
-        for k, v in config.Config.__dict__.items()
-        if not (k.startswith('__') and k.endswith('__'))
-    }
-    # IPython.embed()
-    # breakpoint()
-    wandb.init(config=config_params, project="multimodal-sarcasm")
+    wandb.init(name=config.run_name,
+               config=vars(config),
+               project="multimodal-sarcasm")
     wandb.config.update({"config_key": args.config_key})
-    wandb.run.name = run_config.run_name + re.sub(r'^.*?-', '-',
-                                                  wandb.run.name)
-    print(wandb.run.name)
-    breakpoint()
     # wandb.config.svm_c=config.svm_c
 
     # Load data
-    data = DataLoader(run_config)
+    data = DataLoader(config)
     # labels = ['Non-Sarcastic', 'Sarcastic']
 
     # Iterating over each fold
@@ -288,13 +275,13 @@ def trainSpeakerDependent(model_name=None):
                test_index) in enumerate(data.getStratifiedKFold()):
 
         # Present fold
-        run_config.fold = fold + 1
-        print("Present Fold: {}".format(run_config.fold))
+        config.fold = fold + 1
+        print("Present Fold: {}".format(config.fold))
 
         train_input, train_output, test_input, test_output = trainIO(
             train_index, test_index)
 
-        train_func = CLF_MAP[run_config.model][0]
+        train_func = CLF_MAP[config.model][0]
         # test_func = CLF_MAP[args.clf][1]
         clf = train_func(train_input, train_output)
 
@@ -401,16 +388,16 @@ print("Args:", args)
 RESULT_FILE = "./output/lsvc{}.json"
 
 # Load config
-run_config = CONFIG_BY_KEY[args.config_key]
+config = CONFIG_BY_KEY[args.config_key]
 
 # Load data
-data = DataLoader(run_config)
+data = DataLoader(config)
 
 if __name__ == "__main__":
 
-    if run_config.speaker_independent:
-        trainSpeakerIndependent(model_name=run_config.model)
+    if config.speaker_independent:
+        trainSpeakerIndependent(model_name=config.model)
     else:
-        for _ in range(run_config.runs):
-            trainSpeakerDependent(model_name=run_config.model)
-            printResult(model_name=run_config.model)
+        for _ in range(config.runs):
+            trainSpeakerDependent(model_name=config.model)
+            printResult(model_name=config.model)

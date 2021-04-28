@@ -1,0 +1,241 @@
+diff --git a/config.py b/config.py
+index 3812b56..74acd6b 100644
+--- a/config.py
++++ b/config.py
+@@ -24,14 +24,14 @@ class Config:
+     val_split = 0.1  # Percentage of data in validation set from training data
+ 
+     model = 'lsvc'
+-    run_name = model + '_' + 'c=0.025'
++    run_name = model + '-'
+ 
+     svm_c = 10.0
+     svm_scale = True
+     svm_gamma = 'scale'
+     svm_kernel = 'rbf'
+ 
+-    lsvc_c = 0.025
++    lsvc_c = 20
+     lsvc_max_iter = 10000
+ 
+ 
+diff --git a/train.py b/train.py
+index cdb4175..d9449b6 100644
+--- a/train.py
++++ b/train.py
+@@ -2,6 +2,8 @@ import argparse
+ import json
+ import os
+ 
++import IPython
++
+ import wandb
+ # from wandb.keras import WandbCallback
+ 
+@@ -15,6 +17,7 @@ from sklearn.naive_bayes import GaussianNB
+ from sklearn.pipeline import make_pipeline
+ from sklearn.preprocessing import FunctionTransformer, StandardScaler
+ 
++import config
+ from config import CONFIG_BY_KEY
+ from data_loader import DataLoader
+ from data_loader import DataHelper
+@@ -28,7 +31,7 @@ def lsvc_train(train_input, train_output):
+     # clf = make_pipeline(
+     # StandardScaler(),
+     # svm.SVC(C=config.svm_c, gamma='scale', kernel='rbf'))
+-    clf = LinearSVC(C=config.lsvc_c, max_iter=config.lsvc_max_iter)
++    clf = LinearSVC(C=run_config.lsvc_c, max_iter=run_config.lsvc_max_iter)
+     return clf.fit(train_input, train_output[:, 1].astype(int))
+ 
+ 
+@@ -79,11 +82,11 @@ def lr_test(clf, test_input, test_output):
+ 
+ def svm_train(train_input, train_output):
+     clf = make_pipeline(
+-        StandardScaler() if config.svm_scale else FunctionTransformer(
++        StandardScaler() if run_config.svm_scale else FunctionTransformer(
+             lambda x: x, validate=False),
+-        svm.SVC(C=config.svm_c,
+-                gamma=config.svm_gamma,
+-                kernel=config.svm_kernel))
++        svm.SVC(C=run_config.svm_c,
++                gamma=run_config.svm_gamma,
++                kernel=run_config.svm_kernel))
+ 
+     return clf.fit(train_input, np.argmax(train_output, axis=1))
+ 
+@@ -160,14 +163,14 @@ def trainIO(train_index, test_index):
+     test_input, test_output = data.getSplit(test_index)
+ 
+     datahelper = DataHelper(train_input, train_output, test_input, test_output,
+-                            config, data)
++                            run_config, data)
+ 
+     train_input = np.empty((len(train_input), 0))
+     test_input = np.empty((len(test_input), 0))
+ 
+-    if config.use_target_text:
++    if run_config.use_target_text:
+ 
+-        if config.use_bert:
++        if run_config.use_bert:
+             train_input = np.concatenate(
+                 [train_input,
+                  datahelper.getTargetBertFeatures(mode='train')],
+@@ -194,7 +197,7 @@ def trainIO(train_index, test_index):
+             ],
+                                         axis=1)
+ 
+-    if config.use_target_video:
++    if run_config.use_target_video:
+         train_input = np.concatenate(
+             [train_input,
+              datahelper.getTargetVideoPool(mode='train')], axis=1)
+@@ -202,7 +205,7 @@ def trainIO(train_index, test_index):
+             [test_input,
+              datahelper.getTargetVideoPool(mode='test')], axis=1)
+ 
+-    if config.use_target_audio:
++    if run_config.use_target_audio:
+         train_input = np.concatenate(
+             [train_input,
+              datahelper.getTargetAudioPool(mode='train')], axis=1)
+@@ -216,15 +219,15 @@ def trainIO(train_index, test_index):
+ 
+     # Aux input
+ 
+-    if config.use_author:
++    if run_config.use_author:
+         train_input_author = datahelper.getAuthor(mode="train")
+         test_input_author = datahelper.getAuthor(mode="test")
+ 
+         train_input = np.concatenate([train_input, train_input_author], axis=1)
+         test_input = np.concatenate([test_input, test_input_author], axis=1)
+ 
+-    if config.use_context:
+-        if config.use_bert:
++    if run_config.use_context:
++        if run_config.use_bert:
+             train_input_context = datahelper.getContextBertFeatures(
+                 mode="train")
+             test_input_context = datahelper.getContextBertFeatures(mode="test")
+@@ -237,19 +240,20 @@ def trainIO(train_index, test_index):
+         test_input = np.concatenate([test_input, test_input_context], axis=1)
+ 
+     train_output = datahelper.oneHotOutput(mode="train",
+-                                           size=config.num_classes)
+-    test_output = datahelper.oneHotOutput(mode="test", size=config.num_classes)
++                                           size=run_config.num_classes)
++    test_output = datahelper.oneHotOutput(mode="test",
++                                          size=run_config.num_classes)
+ 
+     return train_input, train_output, test_input, test_output
+ 
+ 
+ def trainSpeakerIndependent(model_name=None):
+ 
+-    config.fold = "SI"
++    run_config.fold = "SI"
+ 
+     (train_index, test_index) = data.getSpeakerIndependent()
+     train_input, train_output, test_input, test_output = trainIO(
+-        test_index, test_index)
++        train_index, test_index)
+ 
+     train_func = CLF_MAP[args.clf][0]
+     test_func = CLF_MAP[args.clf][1]
+@@ -259,12 +263,22 @@ def trainSpeakerIndependent(model_name=None):
+ 
+ def trainSpeakerDependent(model_name=None):
+ 
+-    wandb.init(name=config.run_name, project="multimodal-sarcasm")
+-    wandb.config.update(args)
++    print(vars(run_config))
++
++    config_params = {
++        k: v
++        for k, v in config.Config.__dict__.items()
++        if not (k.startswith('__') and k.endswith('__'))
++    }
++    # IPython.embed()
++    # breakpoint()
++    wandb.init(config=config_params, project="multimodal-sarcasm")
++    wandb.config.update({"config_key": args.config_key})
++    wandb.run.name = run_config.run_name + wandb.run.name
+     # wandb.config.svm_c=config.svm_c
+ 
+     # Load data
+-    data = DataLoader(config)
++    data = DataLoader(run_config)
+     # labels = ['Non-Sarcastic', 'Sarcastic']
+ 
+     # Iterating over each fold
+@@ -273,13 +287,13 @@ def trainSpeakerDependent(model_name=None):
+                test_index) in enumerate(data.getStratifiedKFold()):
+ 
+         # Present fold
+-        config.fold = fold + 1
+-        print("Present Fold: {}".format(config.fold))
++        run_config.fold = fold + 1
++        print("Present Fold: {}".format(run_config.fold))
+ 
+         train_input, train_output, test_input, test_output = trainIO(
+             train_index, test_index)
+ 
+-        train_func = CLF_MAP[config.model][0]
++        train_func = CLF_MAP[run_config.model][0]
+         # test_func = CLF_MAP[args.clf][1]
+         clf = train_func(train_input, train_output)
+ 
+@@ -386,16 +400,16 @@ print("Args:", args)
+ RESULT_FILE = "./output/lsvc{}.json"
+ 
+ # Load config
+-config = CONFIG_BY_KEY[args.config_key]
++run_config = CONFIG_BY_KEY[args.config_key]
+ 
+ # Load data
+-data = DataLoader(config)
++data = DataLoader(run_config)
+ 
+ if __name__ == "__main__":
+ 
+-    if config.speaker_independent:
+-        trainSpeakerIndependent(model_name=config.model)
++    if run_config.speaker_independent:
++        trainSpeakerIndependent(model_name=run_config.model)
+     else:
+-        for _ in range(config.runs):
+-            trainSpeakerDependent(model_name=config.model)
+-            printResult(model_name=config.model)
++        for _ in range(run_config.runs):
++            trainSpeakerDependent(model_name=run_config.model)
++            printResult(model_name=run_config.model)
+diff --git a/wandb/debug-internal.log b/wandb/debug-internal.log
+index 035af6b..4ceb9ca 120000
+--- a/wandb/debug-internal.log
++++ b/wandb/debug-internal.log
+@@ -1 +1 @@
+-run-20210427_200727-38a0hyeu/logs/debug-internal.log
+\ No newline at end of file
++run-20210428_202338-1nd00k5i/logs/debug-internal.log
+\ No newline at end of file
+diff --git a/wandb/debug.log b/wandb/debug.log
+index dc3cf25..a1aff8f 120000
+--- a/wandb/debug.log
++++ b/wandb/debug.log
+@@ -1 +1 @@
+-run-20210427_200727-38a0hyeu/logs/debug.log
+\ No newline at end of file
++run-20210428_202338-1nd00k5i/logs/debug.log
+\ No newline at end of file
+diff --git a/wandb/latest-run b/wandb/latest-run
+index aa117f9..bc90808 120000
+--- a/wandb/latest-run
++++ b/wandb/latest-run
+@@ -1 +1 @@
+-run-20210427_200727-38a0hyeu
+\ No newline at end of file
++run-20210428_202338-1nd00k5i
+\ No newline at end of file

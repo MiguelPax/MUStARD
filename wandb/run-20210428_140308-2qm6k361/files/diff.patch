@@ -1,0 +1,74 @@
+diff --git a/config.py b/config.py
+index 3812b56..2657d97 100644
+--- a/config.py
++++ b/config.py
+@@ -24,14 +24,14 @@ class Config:
+     val_split = 0.1  # Percentage of data in validation set from training data
+ 
+     model = 'lsvc'
+-    run_name = model + '_' + 'c=0.025'
++    run_name = model + '_' + 'c=20'
+ 
+     svm_c = 10.0
+     svm_scale = True
+     svm_gamma = 'scale'
+     svm_kernel = 'rbf'
+ 
+-    lsvc_c = 0.025
++    lsvc_c = 20
+     lsvc_max_iter = 10000
+ 
+ 
+diff --git a/train.py b/train.py
+index cdb4175..9b938af 100644
+--- a/train.py
++++ b/train.py
+@@ -249,7 +249,7 @@ def trainSpeakerIndependent(model_name=None):
+ 
+     (train_index, test_index) = data.getSpeakerIndependent()
+     train_input, train_output, test_input, test_output = trainIO(
+-        test_index, test_index)
++        train_index, test_index)
+ 
+     train_func = CLF_MAP[args.clf][0]
+     test_func = CLF_MAP[args.clf][1]
+@@ -259,8 +259,10 @@ def trainSpeakerIndependent(model_name=None):
+ 
+ def trainSpeakerDependent(model_name=None):
+ 
+-    wandb.init(name=config.run_name, project="multimodal-sarcasm")
+-    wandb.config.update(args)
++    wandb.init(name=config.run_name,
++               config=vars(config),
++               project="multimodal-sarcasm")
++    wandb.config.update({"config_key": args.config_key})
+     # wandb.config.svm_c=config.svm_c
+ 
+     # Load data
+diff --git a/wandb/debug-internal.log b/wandb/debug-internal.log
+index 035af6b..a6f1290 120000
+--- a/wandb/debug-internal.log
++++ b/wandb/debug-internal.log
+@@ -1 +1 @@
+-run-20210427_200727-38a0hyeu/logs/debug-internal.log
+\ No newline at end of file
++run-20210428_140308-2qm6k361/logs/debug-internal.log
+\ No newline at end of file
+diff --git a/wandb/debug.log b/wandb/debug.log
+index dc3cf25..30778f0 120000
+--- a/wandb/debug.log
++++ b/wandb/debug.log
+@@ -1 +1 @@
+-run-20210427_200727-38a0hyeu/logs/debug.log
+\ No newline at end of file
++run-20210428_140308-2qm6k361/logs/debug.log
+\ No newline at end of file
+diff --git a/wandb/latest-run b/wandb/latest-run
+index aa117f9..ba910c3 120000
+--- a/wandb/latest-run
++++ b/wandb/latest-run
+@@ -1 +1 @@
+-run-20210427_200727-38a0hyeu
+\ No newline at end of file
++run-20210428_140308-2qm6k361
+\ No newline at end of file
