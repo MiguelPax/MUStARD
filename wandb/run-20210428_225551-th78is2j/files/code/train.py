@@ -274,7 +274,8 @@ def trainSpeakerDependent(model_name=None):
     wandb.config.update({"config_key": args.config_key})
     wandb.run.name = run_config.run_name + re.sub(r'^.*?-', '-',
                                                   wandb.run.name)
-    # breakpoint()
+    print(wandb.run.name)
+    breakpoint()
     # wandb.config.svm_c=config.svm_c
 
     # Load data
