@@ -12,3 +12,6 @@ Session.vim
 .vscode
 data/glove.840B.300d.txt
 wandb.ipynb
+conda_envs.yaml
+pyrightFile
+MLP\ using\ Fastai\ \&\ Pytorch.ipynb

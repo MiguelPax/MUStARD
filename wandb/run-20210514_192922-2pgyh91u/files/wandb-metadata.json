@@ -1,0 +1,27 @@
+{
+    "os": "Linux-5.4.0-73-generic-x86_64-with-debian-bullseye-sid",
+    "python": "3.7.2",
+    "heartbeatAt": "2021-05-14T17:29:29.391111",
+    "startedAt": "2021-05-14T17:29:22.509670",
+    "docker": null,
+    "gpu": "GeForce 940MX",
+    "gpu_count": 1,
+    "cpu_count": 4,
+    "cuda": null,
+    "args": [
+        "--config-key",
+        "tav"
+    ],
+    "state": "running",
+    "program": "train.py",
+    "codePath": "train.py",
+    "git": {
+        "remote": "git@github.com:MiguelPax/MUStARD.git",
+        "commit": "96fbc572f36a36bb78eede03ab8b438294eb97b9"
+    },
+    "email": "miguelma@kth.se",
+    "root": "/home/miguel/Desktop/NLP/MUStARD",
+    "host": "guthrie",
+    "username": "miguel",
+    "executable": "/home/miguel/miniconda3/envs/mustard/bin/python3"
+}

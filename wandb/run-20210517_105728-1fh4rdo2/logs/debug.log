@@ -1,0 +1,134 @@
+2021-05-17 10:57:29,197 INFO    MainThread:2487658 [wandb_setup.py:_flush():69] setting env: {}
+2021-05-17 10:57:29,200 INFO    MainThread:2487658 [wandb_setup.py:_flush():69] setting login settings: {}
+2021-05-17 10:57:29,200 INFO    MainThread:2487658 [wandb_setup.py:_flush():69] setting login settings: {}
+2021-05-17 10:57:29,200 INFO    MainThread:2487658 [wandb_init.py:_log_setup():336] Logging user logs to /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210517_105728-1fh4rdo2/logs/debug.log
+2021-05-17 10:57:29,201 INFO    MainThread:2487658 [wandb_init.py:_log_setup():337] Logging internal logs to /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210517_105728-1fh4rdo2/logs/debug-internal.log
+2021-05-17 10:57:29,210 INFO    MainThread:2487658 [wandb_init.py:init():369] calling init triggers
+2021-05-17 10:57:29,211 INFO    MainThread:2487658 [wandb_init.py:init():376] wandb.init called with sweep_config: {}
+config: {'runs': 1, 'use_context': False, 'use_author': False, 'use_bert': True, 'use_target_text': False, 'use_target_audio': False, 'use_target_video': False, 'speaker_independent': False, 'embedding_dim': 300, 'word_embedding_path': '/home/sacastro/glove.840B.300d.txt', 'max_sent_length': 20, 'max_context_length': 4, 'num_classes': 2, 'epochs': 15, 'batch_size': 16, 'val_split': 0.1, 'model': 'gauss', 'run_name': 'gauss', 'svm_c': 10.0, 'svm_scale': True, 'svm_gamma': 'scale', 'svm_kernel': 'rbf', 'lsvc_c': 20, 'lsvc_max_iter': 10000}
+2021-05-17 10:57:29,211 INFO    MainThread:2487658 [wandb_init.py:init():391] re-initializing run, found existing run on stack: 16wsbenp
+2021-05-17 10:57:29,214 INFO    MainThread:2487658 [wandb_run.py:finish():1197] finishing run miguelpax/multimodal-sarcasm/16wsbenp
+2021-05-17 10:57:29,272 INFO    MainThread:2487658 [jupyter.py:save_history():349] saving 12 cells to _session_history.ipynb
+2021-05-17 10:57:29,285 INFO    MainThread:2487658 [wandb_run.py:_config_callback():779] config_cb None None {'runs': 1, 'use_context': False, 'use_author': False, 'use_bert': True, 'use_target_text': False, 'use_target_audio': False, 'use_target_video': False, 'speaker_independent': False, 'embedding_dim': 300, 'word_embedding_path': '/home/sacastro/glove.840B.300d.txt', 'max_sent_length': 20, 'max_context_length': 4, 'num_classes': 2, 'epochs': 15, 'batch_size': 16, 'val_split': 0.1, 'model': 'gauss', 'run_name': 'gauss', 'svm_c': 10.0, 'svm_scale': True, 'svm_gamma': 'scale', 'svm_kernel': 'rbf', 'lsvc_c': 20, 'lsvc_max_iter': 10000, '_wandb': {'code_path': 'code/train.py', 'session_history': 'code/_session_history.ipynb'}, 'config_key': 'tav'}
+2021-05-17 10:57:29,316 INFO    MainThread:2487658 [jupyter.py:save_ipynb():268] looking for notebook: None
+2021-05-17 10:57:29,317 INFO    MainThread:2487658 [wandb_init.py:_jupyter_teardown():268] cleaning up jupyter logic
+2021-05-17 10:57:29,318 INFO    MainThread:2487658 [wandb_run.py:_atexit_cleanup():1524] got exitcode: 0
+2021-05-17 10:57:29,320 INFO    MainThread:2487658 [wandb_run.py:_restore():1496] restore
+2021-05-17 10:57:30,005 INFO    MainThread:2487658 [wandb_run.py:_wait_for_finish():1646] got exit ret: file_counts {
+  wandb_count: 2
+  other_count: 1
+}
+pusher_stats {
+  uploaded_bytes: 276143
+  total_bytes: 276143
+}
+
+2021-05-17 10:57:30,117 INFO    MainThread:2487658 [wandb_run.py:_wait_for_finish():1646] got exit ret: file_counts {
+  wandb_count: 2
+  other_count: 1
+}
+pusher_stats {
+  uploaded_bytes: 276143
+  total_bytes: 276143
+}
+
+2021-05-17 10:57:30,890 INFO    MainThread:2487658 [wandb_run.py:_wait_for_finish():1646] got exit ret: file_counts {
+  wandb_count: 7
+  other_count: 1
+}
+pusher_stats {
+  uploaded_bytes: 276143
+  total_bytes: 280169
+}
+
+2021-05-17 10:57:31,336 INFO    MainThread:2487658 [wandb_run.py:_wait_for_finish():1646] got exit ret: file_counts {
+  wandb_count: 7
+  other_count: 2
+}
+pusher_stats {
+  uploaded_bytes: 276251
+  total_bytes: 282657
+}
+
+2021-05-17 10:57:31,438 INFO    MainThread:2487658 [wandb_run.py:_wait_for_finish():1646] got exit ret: file_counts {
+  wandb_count: 7
+  other_count: 2
+}
+pusher_stats {
+  uploaded_bytes: 282657
+  total_bytes: 282657
+}
+
+2021-05-17 10:57:31,540 INFO    MainThread:2487658 [wandb_run.py:_wait_for_finish():1646] got exit ret: file_counts {
+  wandb_count: 7
+  other_count: 2
+}
+pusher_stats {
+  uploaded_bytes: 282657
+  total_bytes: 282657
+}
+
+2021-05-17 10:57:31,641 INFO    MainThread:2487658 [wandb_run.py:_wait_for_finish():1646] got exit ret: file_counts {
+  wandb_count: 7
+  other_count: 2
+}
+pusher_stats {
+  uploaded_bytes: 282657
+  total_bytes: 282657
+}
+
+2021-05-17 10:57:31,743 INFO    MainThread:2487658 [wandb_run.py:_wait_for_finish():1646] got exit ret: file_counts {
+  wandb_count: 7
+  other_count: 2
+}
+pusher_stats {
+  uploaded_bytes: 282657
+  total_bytes: 282657
+}
+
+2021-05-17 10:57:31,844 INFO    MainThread:2487658 [wandb_run.py:_wait_for_finish():1646] got exit ret: file_counts {
+  wandb_count: 7
+  other_count: 2
+}
+pusher_stats {
+  uploaded_bytes: 282657
+  total_bytes: 282657
+}
+
+2021-05-17 10:57:32,005 INFO    MainThread:2487658 [wandb_run.py:_wait_for_finish():1646] got exit ret: done: true
+exit_result {
+}
+file_counts {
+  wandb_count: 7
+  other_count: 2
+}
+pusher_stats {
+  uploaded_bytes: 282657
+  total_bytes: 282657
+}
+
+2021-05-17 10:57:34,572 INFO    MainThread:2487658 [wandb_run.py:_show_files():1868] logging synced files
+2021-05-17 10:57:34,614 INFO    MainThread:2487658 [wandb_init.py:init():418] starting backend
+2021-05-17 10:57:34,614 INFO    MainThread:2487658 [backend.py:_multiprocessing_setup():71] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2021-05-17 10:57:34,627 INFO    MainThread:2487658 [backend.py:ensure_launched():123] starting backend process...
+2021-05-17 10:57:34,691 ERROR   MainThread:2487658 [wandb_init.py:init():770] error
+Traceback (most recent call last):
+  File "/home/miguel/miniconda3/envs/mustard/lib/python3.7/site-packages/wandb/sdk/wandb_init.py", line 744, in init
+    run = wi.init()
+  File "/home/miguel/miniconda3/envs/mustard/lib/python3.7/site-packages/wandb/sdk/wandb_init.py", line 421, in init
+    backend.ensure_launched()
+  File "/home/miguel/miniconda3/envs/mustard/lib/python3.7/site-packages/wandb/sdk/backend/backend.py", line 125, in ensure_launched
+    self.wandb_process.start()
+  File "/home/miguel/miniconda3/envs/mustard/lib/python3.7/multiprocessing/process.py", line 112, in start
+    self._popen = self._Popen(self)
+  File "/home/miguel/miniconda3/envs/mustard/lib/python3.7/multiprocessing/context.py", line 284, in _Popen
+    return Popen(process_obj)
+  File "/home/miguel/miniconda3/envs/mustard/lib/python3.7/multiprocessing/popen_spawn_posix.py", line 32, in __init__
+    super().__init__(process_obj)
+  File "/home/miguel/miniconda3/envs/mustard/lib/python3.7/multiprocessing/popen_fork.py", line 20, in __init__
+    self._launch(process_obj)
+  File "/home/miguel/miniconda3/envs/mustard/lib/python3.7/multiprocessing/popen_spawn_posix.py", line 42, in _launch
+    prep_data = spawn.get_preparation_data(process_obj._name)
+  File "/home/miguel/miniconda3/envs/mustard/lib/python3.7/multiprocessing/spawn.py", line 172, in get_preparation_data
+    main_mod_name = getattr(main_module.__spec__, "name", None)
+AttributeError: module '__main__' has no attribute '__spec__'

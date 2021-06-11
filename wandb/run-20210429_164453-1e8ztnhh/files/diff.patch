@@ -1,0 +1,134 @@
+diff --git a/config.py b/config.py
+index 856403f..e34a16b 100644
+--- a/config.py
++++ b/config.py
+@@ -23,7 +23,7 @@ class Config:
+     batch_size = 16
+     val_split = 0.1  # Percentage of data in validation set from training data
+ 
+-    model = 'lsvc'
++    model = 'gauss'
+     run_name = model
+ 
+     svm_c = 10.0
+diff --git a/train.py b/train.py
+index 122991c..207d2b5 100644
+--- a/train.py
++++ b/train.py
+@@ -2,8 +2,11 @@ import argparse
+ import json
+ import os
+ import re
++import sys
+ 
+-import IPython
++from scipy.sparse.construct import random
++
++# import IPython
+ import numpy as np
+ from sklearn import svm
+ from sklearn.ensemble import RandomForestClassifier
+@@ -13,6 +16,11 @@ from sklearn.naive_bayes import GaussianNB
+ from sklearn.pipeline import make_pipeline
+ from sklearn.preprocessing import FunctionTransformer, StandardScaler
+ from sklearn.svm import LinearSVC
++from fastai.vision import *
++# import fastai.vision
++import torch
++import torch.nn.functional as F
++from torch import nn
+ import wandb
+ 
+ import config
+@@ -23,6 +31,34 @@ from data_loader import DataHelper
+ # %%wandb
+ wandb.login()
+ WANDB_NOTEBOOK_NAME = 'train.py'
++# breakpoint()
++
++class FullyConnectedNN(nn.Module):
++    def __init__(self):
++        # call constructor from superclass
++        super().__init__()
++
++        # define network layers
++        self.fc1 = nn.Linear(1503, 250, bias=True)
++        self.fc2 = nn.Linear(250, 120, bias=True)
++        self.fc3 = nn.Linear(120, 2, bias=True)
++
++    def forward(self, xb):
++        # define forward pass
++        x = xb.float()
++        # x = xb.view(250, -1)
++        x = F.relu(self.fc1(x))
++        x = F.relu(self.fc2(x))
++        x = torch.sigmoid(self.fc3(x))
++        # self.lin3(x)
++        return x
++
++
++def fcnn_train(train_input, train_output):
++    clf = FullyConnectedNN()
++    # print(clf)
++    fcnn_learner = Learner(data=data, model=clf, loss_func=nn.CrossEntropyLoss(),metrics=accuracy)
++    fcnn_learner.fit_one_cycle(5,1e-2)
+ 
+ 
+ def lsvc_train(train_input, train_output):
+@@ -30,6 +66,7 @@ def lsvc_train(train_input, train_output):
+     # StandardScaler(),
+     # svm.SVC(C=config.svm_c, gamma='scale', kernel='rbf'))
+     clf = LinearSVC(C=run_config.lsvc_c, max_iter=run_config.lsvc_max_iter)
++# print(sys.executable)
+     return clf.fit(train_input, train_output[:, 1].astype(int))
+ 
+ 
+@@ -313,10 +350,7 @@ def trainSpeakerDependent(model_name=None):
+         # result_str = classification_report(y_true, y_pred, digits=3)
+         # print(confusion_matrix(y_true, y_pred))
+         # print(result_string)
+-        result_dict = classification_report(y_test,
+-                                            y_pred,
+-                                            output_dict=True,
+-                                            digits=3)
++        result_dict = classification_report(y_test, y_pred, output_dict=True, digits=3)
+ 
+         results.append(result_dict)
+         # wandb.sklearn.plot_classifier(clf,
+@@ -377,7 +411,8 @@ CLF_MAP = {
+     'lr': [lr_train, lr_test],
+     'rfc': [rfc_train, rfc_test],
+     'gauss': [gauss_train, gauss_test],
+-    'svm': [svm_train, svm_test]
++    'svm': [svm_train, svm_test],
++    'fcnn': [fcnn_train, None]
+ }
+ 
+ # a=CLF_MAP['lr'][0]
+diff --git a/wandb/debug-internal.log b/wandb/debug-internal.log
+index d68616c..f24afd0 120000
+--- a/wandb/debug-internal.log
++++ b/wandb/debug-internal.log
+@@ -1 +1 @@
+-run-20210428_225551-th78is2j/logs/debug-internal.log
+\ No newline at end of file
++run-20210429_164453-1e8ztnhh/logs/debug-internal.log
+\ No newline at end of file
+diff --git a/wandb/debug.log b/wandb/debug.log
+index d8b0872..e71d029 120000
+--- a/wandb/debug.log
++++ b/wandb/debug.log
+@@ -1 +1 @@
+-run-20210428_225551-th78is2j/logs/debug.log
+\ No newline at end of file
++run-20210429_164453-1e8ztnhh/logs/debug.log
+\ No newline at end of file
+diff --git a/wandb/latest-run b/wandb/latest-run
+index efe89a9..10c4e75 120000
+--- a/wandb/latest-run
++++ b/wandb/latest-run
+@@ -1 +1 @@
+-run-20210428_225551-th78is2j
+\ No newline at end of file
++run-20210429_164453-1e8ztnhh
+\ No newline at end of file

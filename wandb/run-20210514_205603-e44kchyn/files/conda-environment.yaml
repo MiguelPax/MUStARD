@@ -1,0 +1,4 @@
+name: mustard
+channels:
+  - defaults
+prefix: /home/miguel/miniconda3/envs/mustard/envs/mustard

@@ -1,0 +1,26 @@
+2021-05-02 13:13:04,522 INFO    MainThread:216648 [wandb_setup.py:_flush():69] setting env: {}
+2021-05-02 13:13:04,522 INFO    MainThread:216648 [wandb_setup.py:_flush():69] setting login settings: {}
+2021-05-02 13:13:04,523 INFO    MainThread:216648 [wandb_setup.py:_flush():69] setting login settings: {}
+2021-05-02 13:13:04,523 INFO    MainThread:216648 [wandb_init.py:_log_setup():336] Logging user logs to /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210502_131304-35ex21yx/logs/debug.log
+2021-05-02 13:13:04,523 INFO    MainThread:216648 [wandb_init.py:_log_setup():337] Logging internal logs to /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210502_131304-35ex21yx/logs/debug-internal.log
+2021-05-02 13:13:04,523 INFO    MainThread:216648 [wandb_init.py:init():369] calling init triggers
+2021-05-02 13:13:04,523 INFO    MainThread:216648 [wandb_init.py:init():376] wandb.init called with sweep_config: {}
+config: {'runs': 1, 'use_context': False, 'use_author': False, 'use_bert': True, 'use_target_text': False, 'use_target_audio': False, 'use_target_video': False, 'speaker_independent': False, 'embedding_dim': 300, 'word_embedding_path': '/home/sacastro/glove.840B.300d.txt', 'max_sent_length': 20, 'max_context_length': 4, 'num_classes': 2, 'epochs': 15, 'batch_size': 16, 'val_split': 0.1, 'model': 'gauss', 'run_name': 'gauss', 'svm_c': 10.0, 'svm_scale': True, 'svm_gamma': 'scale', 'svm_kernel': 'rbf', 'lsvc_c': 20, 'lsvc_max_iter': 10000}
+2021-05-02 13:13:04,524 INFO    MainThread:216648 [wandb_init.py:init():418] starting backend
+2021-05-02 13:13:04,524 INFO    MainThread:216648 [backend.py:_multiprocessing_setup():71] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2021-05-02 13:13:04,578 INFO    MainThread:216648 [backend.py:ensure_launched():123] starting backend process...
+2021-05-02 13:13:04,657 INFO    MainThread:216648 [backend.py:ensure_launched():128] started backend process with pid: 218781
+2021-05-02 13:13:04,664 INFO    MainThread:216648 [wandb_init.py:init():423] backend started and connected
+2021-05-02 13:13:04,809 INFO    MainThread:216648 [wandb_init.py:init():465] updated telemetry
+2021-05-02 13:13:04,809 INFO    MainThread:216648 [wandb_init.py:init():484] communicating current version
+2021-05-02 13:13:07,957 INFO    MainThread:216648 [wandb_init.py:init():489] got version response 
+2021-05-02 13:13:07,957 INFO    MainThread:216648 [wandb_init.py:init():497] communicating run to backend with 30 second timeout
+2021-05-02 13:13:08,275 INFO    MainThread:216648 [wandb_init.py:init():522] starting run threads in backend
+2021-05-02 13:13:09,728 INFO    MainThread:216648 [wandb_run.py:_console_start():1554] atexit reg
+2021-05-02 13:13:09,729 INFO    MainThread:216648 [wandb_run.py:_redirect():1401] redirect: SettingsConsole.REDIRECT
+2021-05-02 13:13:09,730 INFO    MainThread:216648 [wandb_run.py:_redirect():1406] Redirecting console.
+2021-05-02 13:13:09,747 INFO    MainThread:216648 [wandb_run.py:_redirect():1468] Redirects installed.
+2021-05-02 13:13:09,747 INFO    MainThread:216648 [wandb_init.py:init():546] run started, returning control to user process
+2021-05-02 13:13:09,747 INFO    MainThread:216648 [wandb_run.py:_config_callback():779] config_cb None None {'config_key': 'tav'}
+2021-05-02 22:32:06,451 INFO    MainThread:216648 [wandb_run.py:_atexit_cleanup():1524] got exitcode: 0
+2021-05-02 22:32:06,455 INFO    MainThread:216648 [wandb_run.py:_restore():1496] restore

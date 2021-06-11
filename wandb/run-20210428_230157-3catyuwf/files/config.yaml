@@ -1,0 +1,95 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    cli_version: 0.10.27
+    code_path: code/train.py
+    framework: sklearn
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    python_version: 3.7.2
+    t:
+      1:
+      - 5
+      2:
+      - 5
+      4: 3.7.2
+      5: 0.10.27
+      8:
+      - 5
+batch_size:
+  desc: null
+  value: 16
+config_key:
+  desc: null
+  value: tav
+embedding_dim:
+  desc: null
+  value: 300
+epochs:
+  desc: null
+  value: 15
+lsvc_c:
+  desc: null
+  value: 20
+lsvc_max_iter:
+  desc: null
+  value: 10000
+max_context_length:
+  desc: null
+  value: 4
+max_sent_length:
+  desc: null
+  value: 20
+model:
+  desc: null
+  value: lsvc
+num_classes:
+  desc: null
+  value: 2
+run_name:
+  desc: null
+  value: lsvc
+runs:
+  desc: null
+  value: 1
+speaker_independent:
+  desc: null
+  value: false
+svm_c:
+  desc: null
+  value: 10.0
+svm_gamma:
+  desc: null
+  value: scale
+svm_kernel:
+  desc: null
+  value: rbf
+svm_scale:
+  desc: null
+  value: true
+use_author:
+  desc: null
+  value: false
+use_bert:
+  desc: null
+  value: true
+use_context:
+  desc: null
+  value: false
+use_target_audio:
+  desc: null
+  value: false
+use_target_text:
+  desc: null
+  value: false
+use_target_video:
+  desc: null
+  value: false
+val_split:
+  desc: null
+  value: 0.1
+word_embedding_path:
+  desc: null
+  value: /home/sacastro/glove.840B.300d.txt
