@@ -1,0 +1,156 @@
+Present Fold: 1
+vocab size: 1702
+Loading glove model
+epoch     train_loss  valid_loss  accuracy  time
+
+0         0.693650    0.693147    0.463768  00:05
+1         0.693273    0.693147    0.463768  00:02
+2         0.693186    0.693139    0.463768  00:01
+3         0.693194    0.693147    0.536232  00:01
+4         0.693164    0.693147    0.536232  00:01
+5         0.693154    0.693147    0.536232  00:01
+6         0.693151    0.693147    0.536232  00:02
+7         0.693150    0.693147    0.536232  00:01
+8         0.693149    0.693147    0.536232  00:02
+9         0.693149    0.693147    0.536232  00:01
+10        0.693149    0.693147    0.536232  00:02
+11        0.693149    0.693147    0.536232  00:01
+12        0.693148    0.693147    0.536232  00:01
+13        0.693148    0.693147    0.536232  00:01
+14        0.693148    0.693147    0.536232  00:02
+15        0.693148    0.693147    0.536232  00:01
+16        0.693148    0.693147    0.536232  00:01
+17        0.693148    0.693147    0.536232  00:01
+18        0.693148    0.693147    0.536232  00:01
+
+19        0.693148    0.693147    0.536232  00:02
+20        0.693148    0.693147    0.536232  00:02
+21        0.693148    0.693147    0.536232  00:01
+22        0.734093    0.777030    0.536232  00:01
+23        0.793438    0.777030    0.536232  00:01
+24        0.825291    0.777030    0.536232  00:01
+25        0.828884    0.777030    0.536232  00:01
+26        0.826014    0.777030    0.536232  00:01
+27        0.823565    0.777030    0.536232  00:01
+28        0.823807    0.777030    0.536232  00:02
+29        0.831014    0.777030    0.536232  00:02
+30        0.812765    0.777030    0.536232  00:01
+31        0.810256    0.777030    0.536232  00:01
+32        0.818307    0.777030    0.536232  00:02
+33        0.820855    0.777030    0.536232  00:02
+34        0.820761    0.777030    0.536232  00:02
+35        0.829732    0.777030    0.536232  00:02
+
+36        0.822225    0.777030    0.536232  00:02
+37        0.816560    0.777030    0.536232  00:02
+38        0.818241    0.777030    0.536232  00:02
+39        0.824369    0.777030    0.536232  00:02
+40        0.828208    0.777030    0.536232  00:02
+
+41        0.821367    0.777030    0.536232  00:02
+42        0.823490    0.777030    0.536232  00:03
+
+43        0.817471    0.777030    0.536232  00:03
+
+44        0.822137    0.777030    0.536232  00:02
+
+45        0.821512    0.777030    0.536232  00:03
+46        0.816507    0.777030    0.536232  00:02
+47        0.822010    0.777030    0.536232  00:03
+
+
+48        0.818580    0.777030    0.536232  00:05
+
+
+49        0.819891    0.777030    0.536232  00:06
+Present Fold: 2
+vocab size: 1684
+Loading glove model
+epoch     train_loss  valid_loss  accuracy  time
+
+0         0.693578    0.693147    0.514493  00:06
+
+1         0.693255    0.693147    0.500000  00:03
+2         0.693181    0.693147    0.500000  00:02
+3         0.693159    0.693147    0.500000  00:01
+4         0.693152    0.693147    0.500000  00:02
+5         0.693150    0.693147    0.500000  00:01
+6         0.693149    0.693147    0.500000  00:01
+7         0.693149    0.693147    0.500000  00:01
+8         0.693149    0.693147    0.500000  00:01
+9         0.693149    0.693147    0.500000  00:02
+10        0.693149    0.693147    0.500000  00:02
+11        0.693149    0.693147    0.500000  00:02
+
+12        0.693148    0.693147    0.500000  00:02
+13        0.693148    0.693147    0.500000  00:02
+14        0.693148    0.693147    0.500000  00:02
+15        0.693148    0.693147    0.500000  00:02
+16        0.693148    0.693147    0.500000  00:02
+17        0.693148    0.693147    0.500000  00:02
+18        0.693148    0.693147    0.500000  00:02
+19        0.693148    0.693147    0.500000  00:01
+20        0.693148    0.693147    0.500000  00:01
+21        0.693148    0.693147    0.500000  00:01
+22        0.693148    0.693147    0.500000  00:01
+23        0.693148    0.693147    0.500000  00:01
+24        0.693148    0.693147    0.500000  00:01
+25        0.693148    0.693147    0.500000  00:01
+26        0.693148    0.693147    0.500000  00:01
+27        0.693148    0.693147    0.500000  00:01
+
+28        0.693148    0.693147    0.500000  00:02
+29        0.693148    0.693147    0.500000  00:02
+30        0.693148    0.693147    0.500000  00:02
+31        0.693148    0.693147    0.500000  00:02
+
+
+32        0.693148    0.693147    0.500000  00:03
+33        0.693148    0.693147    0.500000  00:03
+
+34        0.693148    0.693147    0.500000  00:03
+35        0.693148    0.693147    0.500000  00:02
+36        0.693148    0.693147    0.500000  00:02
+37        0.693148    0.693147    0.500000  00:02
+Epoch 39/50 : |--------------------------------| 0.00% [0/55 00:00<00:00]
+Exception ignored in: <function _releaseLock at 0x7f672d060a60>
+Traceback (most recent call last):
+  File "/home/miguel/miniconda3/envs/mustard/lib/python3.7/logging/__init__.py", line 221, in _releaseLock
+    def _releaseLock():
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/home/miguel/miniconda3/envs/mustard/lib/python3.7/site-packages/torch/utils/data/dataloader.py", line 872, in _try_get_data
+    data = self._data_queue.get(timeout=timeout)
+  File "/home/miguel/miniconda3/envs/mustard/lib/python3.7/multiprocessing/queues.py", line 105, in get
+    raise Empty
+_queue.Empty
+The above exception was the direct cause of the following exception:
+Traceback (most recent call last):
+  File "train.py", line 494, in <module>
+    trainSpeakerDependent(model_name=run_config.model)
+  File "train.py", line 370, in trainSpeakerDependent
+    test_output)
+  File "train.py", line 93, in fcnn_train
+    fcnn_learner.fit_one_cycle(50, 1e-2)
+  File "/home/miguel/miniconda3/envs/mustard/lib/python3.7/site-packages/fastai/train.py", line 23, in fit_one_cycle
+    learn.fit(cyc_len, max_lr, wd=wd, callbacks=callbacks)
+  File "/home/miguel/miniconda3/envs/mustard/lib/python3.7/site-packages/fastai/basic_train.py", line 200, in fit
+    fit(epochs, self, metrics=self.metrics, callbacks=self.callbacks+callbacks)
+  File "/home/miguel/miniconda3/envs/mustard/lib/python3.7/site-packages/fastai/basic_train.py", line 99, in fit
+    for xb,yb in progress_bar(learn.data.train_dl, parent=pbar):
+  File "/home/miguel/miniconda3/envs/mustard/lib/python3.7/site-packages/fastprogress/fastprogress.py", line 47, in __iter__
+    raise e
+  File "/home/miguel/miniconda3/envs/mustard/lib/python3.7/site-packages/fastprogress/fastprogress.py", line 41, in __iter__
+    for i,o in enumerate(self.gen):
+  File "/home/miguel/miniconda3/envs/mustard/lib/python3.7/site-packages/fastai/basic_data.py", line 75, in __iter__
+    for b in self.dl: yield self.proc_batch(b)
+  File "/home/miguel/miniconda3/envs/mustard/lib/python3.7/site-packages/torch/utils/data/dataloader.py", line 435, in __next__
+    data = self._next_data()
+  File "/home/miguel/miniconda3/envs/mustard/lib/python3.7/site-packages/torch/utils/data/dataloader.py", line 1068, in _next_data
+    idx, data = self._get_data()
+  File "/home/miguel/miniconda3/envs/mustard/lib/python3.7/site-packages/torch/utils/data/dataloader.py", line 1034, in _get_data
+    success, data = self._try_get_data()
+  File "/home/miguel/miniconda3/envs/mustard/lib/python3.7/site-packages/torch/utils/data/dataloader.py", line 885, in _try_get_data
+    raise RuntimeError('DataLoader worker (pid(s) {}) exited unexpectedly'.format(pids_str)) from e
+
+Epoch 39/50 :

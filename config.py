@@ -23,7 +23,10 @@ class Config:
     batch_size = 16
     val_split = 0.1  # Percentage of data in validation set from training data
 
-    model = 'lr'
+    track_experiment = False
+
+
+    model = 'fcnn'
     run_name = model
 
     svm_c = 10.0

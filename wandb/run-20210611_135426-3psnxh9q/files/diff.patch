@@ -1,0 +1,40 @@
+diff --git a/config.py b/config.py
+index 78694cf..9066121 100644
+--- a/config.py
++++ b/config.py
+@@ -23,7 +23,7 @@ class Config:
+     batch_size = 16
+     val_split = 0.1  # Percentage of data in validation set from training data
+ 
+-    model = 'lr'
++    model = 'fcnn'
+     run_name = model
+ 
+     svm_c = 10.0
+diff --git a/wandb/debug-internal.log b/wandb/debug-internal.log
+index 526215a..8afa72e 120000
+--- a/wandb/debug-internal.log
++++ b/wandb/debug-internal.log
+@@ -1 +1 @@
+-run-20210604_124850-1zt9roaq/logs/debug-internal.log
+\ No newline at end of file
++run-20210611_135426-3psnxh9q/logs/debug-internal.log
+\ No newline at end of file
+diff --git a/wandb/debug.log b/wandb/debug.log
+index 11da3aa..f5cf08b 120000
+--- a/wandb/debug.log
++++ b/wandb/debug.log
+@@ -1 +1 @@
+-run-20210604_124850-1zt9roaq/logs/debug.log
+\ No newline at end of file
++run-20210611_135426-3psnxh9q/logs/debug.log
+\ No newline at end of file
+diff --git a/wandb/latest-run b/wandb/latest-run
+index d3f12d4..fc6afdf 120000
+--- a/wandb/latest-run
++++ b/wandb/latest-run
+@@ -1 +1 @@
+-run-20210604_124850-1zt9roaq
+\ No newline at end of file
++run-20210611_135426-3psnxh9q
+\ No newline at end of file

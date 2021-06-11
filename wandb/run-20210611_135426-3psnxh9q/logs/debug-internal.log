@@ -1,0 +1,320 @@
+2021-06-11 13:54:38,566 INFO    MainThread:1828165 [internal.py:wandb_internal():91] W&B internal server running at pid: 1828165, started at: 2021-06-11 13:54:38.566421
+2021-06-11 13:54:38,583 DEBUG   HandlerThread:1828165 [handler.py:handle_request():124] handle_request: check_version
+2021-06-11 13:54:38,603 INFO    WriterThread:1828165 [datastore.py:open_for_write():77] open: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/run-3psnxh9q.wandb
+2021-06-11 13:54:38,603 DEBUG   SenderThread:1828165 [sender.py:send():179] send: header
+2021-06-11 13:54:38,603 DEBUG   SenderThread:1828165 [sender.py:send_request():193] send_request: check_version
+2021-06-11 13:54:38,862 DEBUG   SenderThread:1828165 [sender.py:send():179] send: run
+2021-06-11 13:54:40,312 DEBUG   HandlerThread:1828165 [handler.py:handle_request():124] handle_request: run_start
+2021-06-11 13:54:40,332 INFO    SenderThread:1828165 [dir_watcher.py:__init__():168] watching files in: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files
+2021-06-11 13:54:40,332 INFO    SenderThread:1828165 [sender.py:_start_run_threads():707] run started: 3psnxh9q with start time 1623412466
+2021-06-11 13:54:40,332 DEBUG   SenderThread:1828165 [sender.py:send():179] send: summary
+2021-06-11 13:54:40,333 INFO    SenderThread:1828165 [sender.py:_save_file():829] saving file wandb-summary.json with policy end
+2021-06-11 13:54:40,471 DEBUG   HandlerThread:1828165 [meta.py:__init__():39] meta init
+2021-06-11 13:54:40,471 DEBUG   HandlerThread:1828165 [meta.py:__init__():53] meta init done
+2021-06-11 13:54:40,471 DEBUG   HandlerThread:1828165 [meta.py:probe():210] probe
+2021-06-11 13:54:40,993 DEBUG   HandlerThread:1828165 [meta.py:_setup_git():200] setup git
+2021-06-11 13:54:41,187 DEBUG   HandlerThread:1828165 [meta.py:_setup_git():207] setup git done
+2021-06-11 13:54:41,188 DEBUG   HandlerThread:1828165 [meta.py:_save_code():89] save code
+2021-06-11 13:54:41,519 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_created():216] file/dir created: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/code/train.py
+2021-06-11 13:54:41,520 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_created():216] file/dir created: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/wandb-summary.json
+2021-06-11 13:54:41,521 DEBUG   HandlerThread:1828165 [meta.py:_save_code():110] save code done
+2021-06-11 13:54:41,522 DEBUG   HandlerThread:1828165 [meta.py:_save_patches():127] save patches
+2021-06-11 13:54:41,521 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_created():216] file/dir created: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/code
+2021-06-11 13:54:42,219 DEBUG   HandlerThread:1828165 [meta.py:_save_patches():169] save patches done
+2021-06-11 13:54:42,219 DEBUG   HandlerThread:1828165 [meta.py:_save_pip():57] save pip
+2021-06-11 13:54:42,220 DEBUG   HandlerThread:1828165 [meta.py:_save_pip():71] save pip done
+2021-06-11 13:54:42,220 DEBUG   HandlerThread:1828165 [meta.py:_save_conda():78] save conda
+2021-06-11 13:54:42,517 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/code/train.py
+2021-06-11 13:54:42,518 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_created():216] file/dir created: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/requirements.txt
+2021-06-11 13:54:42,518 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_created():216] file/dir created: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/conda-environment.yaml
+2021-06-11 13:54:42,518 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_created():216] file/dir created: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/diff.patch
+2021-06-11 13:54:42,518 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/code
+2021-06-11 13:54:45,521 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_created():216] file/dir created: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:54:48,255 DEBUG   HandlerThread:1828165 [meta.py:_save_conda():86] save conda done
+2021-06-11 13:54:48,255 DEBUG   HandlerThread:1828165 [meta.py:probe():252] probe done
+2021-06-11 13:54:48,294 DEBUG   HandlerThread:1828165 [handler.py:handle_request():124] handle_request: stop_status
+2021-06-11 13:54:48,295 DEBUG   SenderThread:1828165 [sender.py:send_request():193] send_request: stop_status
+2021-06-11 13:54:48,522 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/conda-environment.yaml
+2021-06-11 13:54:48,523 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_created():216] file/dir created: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/wandb-metadata.json
+2021-06-11 13:54:48,559 DEBUG   SenderThread:1828165 [sender.py:send():179] send: config
+2021-06-11 13:54:48,559 DEBUG   SenderThread:1828165 [sender.py:send():179] send: run
+2021-06-11 13:54:48,993 INFO    SenderThread:1828165 [sender.py:send_run():606] updated run: 3psnxh9q
+2021-06-11 13:54:48,993 DEBUG   SenderThread:1828165 [sender.py:send():179] send: files
+2021-06-11 13:54:48,993 INFO    SenderThread:1828165 [sender.py:_save_file():829] saving file wandb-metadata.json with policy now
+2021-06-11 13:54:48,994 INFO    SenderThread:1828165 [sender.py:_save_file():829] saving file code/train.py with policy now
+2021-06-11 13:54:48,994 INFO    SenderThread:1828165 [sender.py:_save_file():829] saving file diff.patch with policy now
+2021-06-11 13:54:49,523 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/config.yaml
+2021-06-11 13:54:49,891 INFO    Thread-12 :1828165 [upload_job.py:push():133] Uploaded file /tmp/tmp2li2z91ywandb/mc3gil4y-code/train.py
+2021-06-11 13:54:49,892 INFO    Thread-13 :1828165 [upload_job.py:push():133] Uploaded file /tmp/tmp2li2z91ywandb/3527jctl-diff.patch
+2021-06-11 13:54:49,892 INFO    Thread-11 :1828165 [upload_job.py:push():133] Uploaded file /tmp/tmp2li2z91ywandb/2bu8ufxo-wandb-metadata.json
+2021-06-11 13:54:51,524 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/config.yaml
+2021-06-11 13:55:03,579 DEBUG   HandlerThread:1828165 [handler.py:handle_request():124] handle_request: stop_status
+2021-06-11 13:55:03,582 DEBUG   SenderThread:1828165 [sender.py:send_request():193] send_request: stop_status
+2021-06-11 13:55:10,135 DEBUG   SenderThread:1828165 [sender.py:send():179] send: stats
+2021-06-11 13:55:19,612 DEBUG   HandlerThread:1828165 [handler.py:handle_request():124] handle_request: stop_status
+2021-06-11 13:55:19,733 DEBUG   SenderThread:1828165 [sender.py:send_request():193] send_request: stop_status
+2021-06-11 13:55:35,730 DEBUG   HandlerThread:1828165 [handler.py:handle_request():124] handle_request: stop_status
+2021-06-11 13:55:35,736 DEBUG   SenderThread:1828165 [sender.py:send_request():193] send_request: stop_status
+2021-06-11 13:55:42,197 DEBUG   SenderThread:1828165 [sender.py:send():179] send: stats
+2021-06-11 13:55:52,500 DEBUG   HandlerThread:1828165 [handler.py:handle_request():124] handle_request: stop_status
+2021-06-11 13:55:52,502 DEBUG   SenderThread:1828165 [sender.py:send_request():193] send_request: stop_status
+2021-06-11 13:56:08,789 DEBUG   HandlerThread:1828165 [handler.py:handle_request():124] handle_request: stop_status
+2021-06-11 13:56:09,053 DEBUG   SenderThread:1828165 [sender.py:send_request():193] send_request: stop_status
+2021-06-11 13:56:13,008 DEBUG   SenderThread:1828165 [sender.py:send():179] send: stats
+2021-06-11 13:56:26,387 DEBUG   HandlerThread:1828165 [handler.py:handle_request():124] handle_request: stop_status
+2021-06-11 13:56:26,389 DEBUG   SenderThread:1828165 [sender.py:send_request():193] send_request: stop_status
+2021-06-11 13:56:42,323 DEBUG   HandlerThread:1828165 [handler.py:handle_request():124] handle_request: stop_status
+2021-06-11 13:56:42,383 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:56:42,391 DEBUG   SenderThread:1828165 [sender.py:send_request():193] send_request: stop_status
+2021-06-11 13:56:43,526 DEBUG   SenderThread:1828165 [sender.py:send():179] send: stats
+2021-06-11 13:56:58,051 DEBUG   HandlerThread:1828165 [handler.py:handle_request():124] handle_request: stop_status
+2021-06-11 13:56:58,052 DEBUG   SenderThread:1828165 [sender.py:send_request():193] send_request: stop_status
+2021-06-11 13:56:58,492 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:57:02,493 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:57:04,495 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:57:06,496 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:57:08,497 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:57:10,498 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:57:12,499 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:57:13,877 DEBUG   HandlerThread:1828165 [handler.py:handle_request():124] handle_request: stop_status
+2021-06-11 13:57:13,878 DEBUG   SenderThread:1828165 [sender.py:send_request():193] send_request: stop_status
+2021-06-11 13:57:14,083 DEBUG   SenderThread:1828165 [sender.py:send():179] send: stats
+2021-06-11 13:57:14,500 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:57:16,501 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:57:18,502 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:57:20,504 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:57:22,508 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:57:24,507 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:57:26,508 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:57:28,509 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:57:29,088 DEBUG   HandlerThread:1828165 [handler.py:handle_request():124] handle_request: stop_status
+2021-06-11 13:57:29,089 DEBUG   SenderThread:1828165 [sender.py:send_request():193] send_request: stop_status
+2021-06-11 13:57:30,510 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:57:32,511 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:57:34,512 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:57:36,513 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:57:38,515 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:57:40,516 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:57:42,516 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:57:44,377 DEBUG   HandlerThread:1828165 [handler.py:handle_request():124] handle_request: stop_status
+2021-06-11 13:57:44,377 DEBUG   SenderThread:1828165 [sender.py:send_request():193] send_request: stop_status
+2021-06-11 13:57:44,518 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:57:44,592 DEBUG   SenderThread:1828165 [sender.py:send():179] send: stats
+2021-06-11 13:57:46,519 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:57:48,520 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:57:50,521 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:57:52,523 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:57:54,524 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:57:56,525 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:57:58,526 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:57:59,594 DEBUG   HandlerThread:1828165 [handler.py:handle_request():124] handle_request: stop_status
+2021-06-11 13:57:59,595 DEBUG   SenderThread:1828165 [sender.py:send_request():193] send_request: stop_status
+2021-06-11 13:58:01,529 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:58:03,530 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:58:05,531 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:58:07,532 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:58:09,532 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:58:11,534 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:58:13,535 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:58:14,904 DEBUG   HandlerThread:1828165 [handler.py:handle_request():124] handle_request: stop_status
+2021-06-11 13:58:14,904 DEBUG   SenderThread:1828165 [sender.py:send_request():193] send_request: stop_status
+2021-06-11 13:58:15,308 DEBUG   SenderThread:1828165 [sender.py:send():179] send: stats
+2021-06-11 13:58:15,536 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:58:17,537 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:58:19,538 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:58:21,539 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:58:23,541 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:58:25,619 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:58:27,621 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:58:29,623 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:58:30,310 DEBUG   HandlerThread:1828165 [handler.py:handle_request():124] handle_request: stop_status
+2021-06-11 13:58:30,311 DEBUG   SenderThread:1828165 [sender.py:send_request():193] send_request: stop_status
+2021-06-11 13:58:31,624 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:58:33,627 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:58:35,628 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:58:37,629 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:58:39,630 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:58:41,631 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:58:43,632 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:58:45,587 DEBUG   SenderThread:1828165 [sender.py:send():179] send: stats
+2021-06-11 13:58:45,610 DEBUG   HandlerThread:1828165 [handler.py:handle_request():124] handle_request: stop_status
+2021-06-11 13:58:45,610 DEBUG   SenderThread:1828165 [sender.py:send_request():193] send_request: stop_status
+2021-06-11 13:58:45,633 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:58:47,634 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:58:49,635 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:58:51,638 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:58:53,640 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:58:55,641 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:58:57,642 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:58:59,643 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:59:00,846 DEBUG   HandlerThread:1828165 [handler.py:handle_request():124] handle_request: stop_status
+2021-06-11 13:59:00,847 DEBUG   SenderThread:1828165 [sender.py:send_request():193] send_request: stop_status
+2021-06-11 13:59:01,644 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:59:11,633 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:59:13,635 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:59:15,636 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:59:16,074 DEBUG   HandlerThread:1828165 [handler.py:handle_request():124] handle_request: stop_status
+2021-06-11 13:59:16,075 DEBUG   SenderThread:1828165 [sender.py:send_request():193] send_request: stop_status
+2021-06-11 13:59:16,655 DEBUG   SenderThread:1828165 [sender.py:send():179] send: stats
+2021-06-11 13:59:17,655 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:59:19,657 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:59:21,657 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:59:23,658 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:59:25,659 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:59:27,660 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:59:29,663 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:59:31,493 DEBUG   HandlerThread:1828165 [handler.py:handle_request():124] handle_request: stop_status
+2021-06-11 13:59:31,494 DEBUG   SenderThread:1828165 [sender.py:send_request():193] send_request: stop_status
+2021-06-11 13:59:31,665 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:59:34,667 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:59:36,668 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:59:38,671 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:59:40,672 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:59:42,673 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:59:44,674 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:59:46,676 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:59:46,707 DEBUG   HandlerThread:1828165 [handler.py:handle_request():124] handle_request: stop_status
+2021-06-11 13:59:46,707 DEBUG   SenderThread:1828165 [sender.py:send_request():193] send_request: stop_status
+2021-06-11 13:59:47,262 DEBUG   SenderThread:1828165 [sender.py:send():179] send: stats
+2021-06-11 13:59:48,677 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:59:50,678 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:59:52,679 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:59:54,681 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:59:56,682 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 13:59:58,684 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 14:00:00,685 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 14:00:02,278 DEBUG   HandlerThread:1828165 [handler.py:handle_request():124] handle_request: stop_status
+2021-06-11 14:00:02,279 DEBUG   SenderThread:1828165 [sender.py:send_request():193] send_request: stop_status
+2021-06-11 14:00:02,686 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 14:00:04,687 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 14:00:06,688 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 14:00:08,689 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 14:00:10,690 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 14:00:12,692 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 14:00:14,693 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 14:00:16,694 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 14:00:17,583 DEBUG   HandlerThread:1828165 [handler.py:handle_request():124] handle_request: stop_status
+2021-06-11 14:00:17,583 DEBUG   SenderThread:1828165 [sender.py:send_request():193] send_request: stop_status
+2021-06-11 14:00:17,982 DEBUG   SenderThread:1828165 [sender.py:send():179] send: stats
+2021-06-11 14:00:18,742 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 14:00:20,743 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 14:00:22,744 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 14:00:24,746 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 14:00:26,747 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 14:00:28,747 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 14:00:30,749 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 14:00:32,749 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 14:00:32,986 DEBUG   HandlerThread:1828165 [handler.py:handle_request():124] handle_request: stop_status
+2021-06-11 14:00:32,986 DEBUG   SenderThread:1828165 [sender.py:send_request():193] send_request: stop_status
+2021-06-11 14:00:34,751 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 14:00:36,754 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 14:00:38,754 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 14:00:39,254 WARNING MainThread:1828165 [internal.py:wandb_internal():147] Internal process interrupt: 1
+2021-06-11 14:00:40,755 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 14:00:41,756 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 14:00:45,757 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 14:00:46,661 DEBUG   SenderThread:1828165 [sender.py:send():179] send: telemetry
+2021-06-11 14:00:46,662 DEBUG   HandlerThread:1828165 [handler.py:handle_request():124] handle_request: poll_exit
+2021-06-11 14:00:46,662 DEBUG   SenderThread:1828165 [sender.py:send():179] send: exit
+2021-06-11 14:00:46,663 INFO    SenderThread:1828165 [sender.py:send_exit():287] handling exit code: 1
+2021-06-11 14:00:46,673 INFO    SenderThread:1828165 [sender.py:send_exit():295] send defer
+2021-06-11 14:00:46,674 DEBUG   SenderThread:1828165 [sender.py:send_request():193] send_request: poll_exit
+2021-06-11 14:00:46,677 DEBUG   HandlerThread:1828165 [handler.py:handle_request():124] handle_request: defer
+2021-06-11 14:00:46,677 INFO    HandlerThread:1828165 [handler.py:handle_request_defer():141] handle defer: 0
+2021-06-11 14:00:46,677 DEBUG   SenderThread:1828165 [sender.py:send_request():193] send_request: defer
+2021-06-11 14:00:46,677 INFO    SenderThread:1828165 [sender.py:send_request_defer():304] handle sender defer: 0
+2021-06-11 14:00:46,678 INFO    SenderThread:1828165 [sender.py:send_request_defer():342] send defer: 1
+2021-06-11 14:00:46,678 DEBUG   HandlerThread:1828165 [handler.py:handle_request():124] handle_request: defer
+2021-06-11 14:00:46,678 INFO    HandlerThread:1828165 [handler.py:handle_request_defer():141] handle defer: 1
+2021-06-11 14:00:46,709 DEBUG   SenderThread:1828165 [sender.py:send_request():193] send_request: defer
+2021-06-11 14:00:46,709 INFO    SenderThread:1828165 [sender.py:send_request_defer():304] handle sender defer: 1
+2021-06-11 14:00:46,710 INFO    SenderThread:1828165 [sender.py:send_request_defer():342] send defer: 2
+2021-06-11 14:00:46,710 DEBUG   SenderThread:1828165 [sender.py:send():179] send: stats
+2021-06-11 14:00:46,710 DEBUG   HandlerThread:1828165 [handler.py:handle_request():124] handle_request: defer
+2021-06-11 14:00:46,710 INFO    HandlerThread:1828165 [handler.py:handle_request_defer():141] handle defer: 2
+2021-06-11 14:00:46,712 DEBUG   SenderThread:1828165 [sender.py:send_request():193] send_request: defer
+2021-06-11 14:00:46,712 INFO    SenderThread:1828165 [sender.py:send_request_defer():304] handle sender defer: 2
+2021-06-11 14:00:46,712 INFO    SenderThread:1828165 [sender.py:send_request_defer():342] send defer: 3
+2021-06-11 14:00:46,712 DEBUG   HandlerThread:1828165 [handler.py:handle_request():124] handle_request: defer
+2021-06-11 14:00:46,712 INFO    HandlerThread:1828165 [handler.py:handle_request_defer():141] handle defer: 3
+2021-06-11 14:00:46,713 DEBUG   SenderThread:1828165 [sender.py:send():179] send: summary
+2021-06-11 14:00:46,714 INFO    SenderThread:1828165 [sender.py:_save_file():829] saving file wandb-summary.json with policy end
+2021-06-11 14:00:46,719 DEBUG   SenderThread:1828165 [sender.py:send_request():193] send_request: defer
+2021-06-11 14:00:46,719 INFO    SenderThread:1828165 [sender.py:send_request_defer():304] handle sender defer: 3
+2021-06-11 14:00:46,719 INFO    SenderThread:1828165 [sender.py:send_request_defer():342] send defer: 4
+2021-06-11 14:00:46,720 DEBUG   HandlerThread:1828165 [handler.py:handle_request():124] handle_request: defer
+2021-06-11 14:00:46,720 INFO    HandlerThread:1828165 [handler.py:handle_request_defer():141] handle defer: 4
+2021-06-11 14:00:46,720 DEBUG   SenderThread:1828165 [sender.py:send_request():193] send_request: defer
+2021-06-11 14:00:46,720 INFO    SenderThread:1828165 [sender.py:send_request_defer():304] handle sender defer: 4
+2021-06-11 14:00:46,758 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 14:00:46,758 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/wandb-summary.json
+2021-06-11 14:00:46,780 DEBUG   HandlerThread:1828165 [handler.py:handle_request():124] handle_request: poll_exit
+2021-06-11 14:00:47,083 INFO    SenderThread:1828165 [sender.py:send_request_defer():342] send defer: 5
+2021-06-11 14:00:47,083 DEBUG   SenderThread:1828165 [sender.py:send_request():193] send_request: poll_exit
+2021-06-11 14:00:47,084 DEBUG   HandlerThread:1828165 [handler.py:handle_request():124] handle_request: defer
+2021-06-11 14:00:47,084 INFO    HandlerThread:1828165 [handler.py:handle_request_defer():141] handle defer: 5
+2021-06-11 14:00:47,084 DEBUG   SenderThread:1828165 [sender.py:send_request():193] send_request: defer
+2021-06-11 14:00:47,084 INFO    SenderThread:1828165 [sender.py:send_request_defer():304] handle sender defer: 5
+2021-06-11 14:00:47,086 INFO    SenderThread:1828165 [dir_watcher.py:finish():282] shutting down directory watcher
+2021-06-11 14:00:47,185 DEBUG   HandlerThread:1828165 [handler.py:handle_request():124] handle_request: poll_exit
+2021-06-11 14:00:47,759 INFO    Thread-8  :1828165 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/config.yaml
+2021-06-11 14:00:47,759 INFO    SenderThread:1828165 [dir_watcher.py:finish():312] scan: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files
+2021-06-11 14:00:47,760 INFO    SenderThread:1828165 [dir_watcher.py:finish():318] scan save: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/wandb-summary.json wandb-summary.json
+2021-06-11 14:00:47,761 INFO    SenderThread:1828165 [dir_watcher.py:finish():318] scan save: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log output.log
+2021-06-11 14:00:47,761 INFO    SenderThread:1828165 [dir_watcher.py:finish():318] scan save: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/conda-environment.yaml conda-environment.yaml
+2021-06-11 14:00:47,761 INFO    SenderThread:1828165 [dir_watcher.py:finish():318] scan save: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/diff.patch diff.patch
+2021-06-11 14:00:47,762 INFO    SenderThread:1828165 [dir_watcher.py:finish():318] scan save: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/config.yaml config.yaml
+2021-06-11 14:00:47,762 INFO    SenderThread:1828165 [dir_watcher.py:finish():318] scan save: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/wandb-metadata.json wandb-metadata.json
+2021-06-11 14:00:47,763 INFO    SenderThread:1828165 [dir_watcher.py:finish():318] scan save: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/requirements.txt requirements.txt
+2021-06-11 14:00:47,786 INFO    SenderThread:1828165 [dir_watcher.py:finish():318] scan save: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/code/train.py code/train.py
+2021-06-11 14:00:47,787 INFO    SenderThread:1828165 [sender.py:send_request_defer():342] send defer: 6
+2021-06-11 14:00:47,787 DEBUG   SenderThread:1828165 [sender.py:send_request():193] send_request: poll_exit
+2021-06-11 14:00:47,787 DEBUG   HandlerThread:1828165 [handler.py:handle_request():124] handle_request: defer
+2021-06-11 14:00:47,787 INFO    HandlerThread:1828165 [handler.py:handle_request_defer():141] handle defer: 6
+2021-06-11 14:00:47,787 DEBUG   SenderThread:1828165 [sender.py:send_request():193] send_request: defer
+2021-06-11 14:00:47,788 INFO    SenderThread:1828165 [sender.py:send_request_defer():304] handle sender defer: 6
+2021-06-11 14:00:47,788 INFO    SenderThread:1828165 [file_pusher.py:finish():176] shutting down file pusher
+2021-06-11 14:00:47,788 INFO    SenderThread:1828165 [sender.py:send_request_defer():342] send defer: 7
+2021-06-11 14:00:47,788 DEBUG   HandlerThread:1828165 [handler.py:handle_request():124] handle_request: defer
+2021-06-11 14:00:47,788 INFO    HandlerThread:1828165 [handler.py:handle_request_defer():141] handle defer: 7
+2021-06-11 14:00:47,789 DEBUG   SenderThread:1828165 [sender.py:send_request():193] send_request: defer
+2021-06-11 14:00:47,789 INFO    SenderThread:1828165 [sender.py:send_request_defer():304] handle sender defer: 7
+2021-06-11 14:00:47,890 DEBUG   HandlerThread:1828165 [handler.py:handle_request():124] handle_request: poll_exit
+2021-06-11 14:00:48,133 INFO    SenderThread:1828165 [sender.py:send_request_defer():342] send defer: 8
+2021-06-11 14:00:48,133 DEBUG   SenderThread:1828165 [sender.py:send_request():193] send_request: poll_exit
+2021-06-11 14:00:48,134 DEBUG   HandlerThread:1828165 [handler.py:handle_request():124] handle_request: defer
+2021-06-11 14:00:48,134 INFO    HandlerThread:1828165 [handler.py:handle_request_defer():141] handle defer: 8
+2021-06-11 14:00:48,134 DEBUG   SenderThread:1828165 [sender.py:send_request():193] send_request: defer
+2021-06-11 14:00:48,134 INFO    SenderThread:1828165 [sender.py:send_request_defer():304] handle sender defer: 8
+2021-06-11 14:00:48,135 INFO    SenderThread:1828165 [sender.py:send_request_defer():342] send defer: 9
+2021-06-11 14:00:48,136 DEBUG   SenderThread:1828165 [sender.py:send():179] send: final
+2021-06-11 14:00:48,136 DEBUG   SenderThread:1828165 [sender.py:send():179] send: footer
+2021-06-11 14:00:48,136 DEBUG   HandlerThread:1828165 [handler.py:handle_request():124] handle_request: defer
+2021-06-11 14:00:48,136 INFO    HandlerThread:1828165 [handler.py:handle_request_defer():141] handle defer: 9
+2021-06-11 14:00:48,136 DEBUG   SenderThread:1828165 [sender.py:send_request():193] send_request: defer
+2021-06-11 14:00:48,136 INFO    SenderThread:1828165 [sender.py:send_request_defer():304] handle sender defer: 9
+2021-06-11 14:00:48,235 DEBUG   HandlerThread:1828165 [handler.py:handle_request():124] handle_request: poll_exit
+2021-06-11 14:00:48,235 DEBUG   SenderThread:1828165 [sender.py:send_request():193] send_request: poll_exit
+2021-06-11 14:00:48,337 DEBUG   HandlerThread:1828165 [handler.py:handle_request():124] handle_request: poll_exit
+2021-06-11 14:00:48,337 DEBUG   SenderThread:1828165 [sender.py:send_request():193] send_request: poll_exit
+2021-06-11 14:00:48,412 INFO    Thread-16 :1828165 [upload_job.py:push():133] Uploaded file /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/conda-environment.yaml
+2021-06-11 14:00:48,413 INFO    Thread-15 :1828165 [upload_job.py:push():133] Uploaded file /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/output.log
+2021-06-11 14:00:48,416 INFO    Thread-18 :1828165 [upload_job.py:push():133] Uploaded file /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/requirements.txt
+2021-06-11 14:00:48,421 INFO    Thread-14 :1828165 [upload_job.py:push():133] Uploaded file /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/wandb-summary.json
+2021-06-11 14:00:48,424 INFO    Thread-17 :1828165 [upload_job.py:push():133] Uploaded file /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/files/config.yaml
+2021-06-11 14:00:48,439 DEBUG   HandlerThread:1828165 [handler.py:handle_request():124] handle_request: poll_exit
+2021-06-11 14:00:48,440 DEBUG   SenderThread:1828165 [sender.py:send_request():193] send_request: poll_exit
+2021-06-11 14:00:48,541 DEBUG   HandlerThread:1828165 [handler.py:handle_request():124] handle_request: poll_exit
+2021-06-11 14:00:48,542 DEBUG   SenderThread:1828165 [sender.py:send_request():193] send_request: poll_exit
+2021-06-11 14:00:48,643 DEBUG   HandlerThread:1828165 [handler.py:handle_request():124] handle_request: poll_exit
+2021-06-11 14:00:48,643 DEBUG   SenderThread:1828165 [sender.py:send_request():193] send_request: poll_exit
+2021-06-11 14:00:48,644 INFO    SenderThread:1828165 [file_pusher.py:join():181] waiting for file pusher
+2021-06-11 14:00:48,645 DEBUG   HandlerThread:1828165 [handler.py:handle_request():124] handle_request: get_summary
+2021-06-11 14:00:48,648 DEBUG   HandlerThread:1828165 [handler.py:handle_request():124] handle_request: sampled_history
+2021-06-11 14:00:48,650 DEBUG   HandlerThread:1828165 [handler.py:handle_request():124] handle_request: shutdown
+2021-06-11 14:00:48,650 INFO    HandlerThread:1828165 [handler.py:finish():638] shutting down handler
+2021-06-11 14:00:49,136 INFO    WriterThread:1828165 [datastore.py:close():258] close: /home/miguel/Desktop/NLP/MUStARD/wandb/run-20210611_135426-3psnxh9q/run-3psnxh9q.wandb
+2021-06-11 14:00:49,644 INFO    SenderThread:1828165 [sender.py:finish():933] shutting down sender
+2021-06-11 14:00:49,644 INFO    SenderThread:1828165 [file_pusher.py:finish():176] shutting down file pusher
+2021-06-11 14:00:49,644 INFO    SenderThread:1828165 [file_pusher.py:join():181] waiting for file pusher
+2021-06-11 14:00:49,655 INFO    MainThread:1828165 [internal.py:handle_exit():78] Internal process exited

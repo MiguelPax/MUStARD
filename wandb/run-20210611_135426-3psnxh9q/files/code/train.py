@@ -32,6 +32,9 @@ from data_loader import DataLoader
 from data_loader import DataHelper
 
 # breakpoint()
+# %%wandb
+wandb.login()
+WANDB_NOTEBOOK_NAME = 'train.py'
 
 
 class FullyConnectedNN(nn.Module):
@@ -338,11 +341,10 @@ def trainSpeakerDependent(model_name=None):
     }
     # IPython.embed()
     # breakpoint()
-    if run_config.track_experiment:
-        wandb.init(config=config_params, project="multimodal-sarcasm")
-        wandb.config.update({"config_key": args.config_key})
-        wandb.run.name = run_config.run_name + re.sub(r'^.*?-', '-',
-                                                      wandb.run.name)
+    wandb.init(config=config_params, project="multimodal-sarcasm")
+    wandb.config.update({"config_key": args.config_key})
+    wandb.run.name = run_config.run_name + re.sub(r'^.*?-', '-',
+                                                  wandb.run.name)
     # breakpoint()
     # wandb.config.svm_c=config.svm_c
 
@@ -439,12 +441,11 @@ def printResult(model_name=None):
     recall = np.mean(weighted_recall)
     fscore = np.mean(weighted_fscores)
 
-    if run_config.track_experiment:
-        wandb.log({
-            'weighted_precision': precision,
-            'weighted_recall': recall,
-            'weighted_fscore': fscore
-        })
+    wandb.log({
+        'weighted_precision': precision,
+        'weighted_recall': recall,
+        'weighted_fscore': fscore
+    })
 
     print("Weighted Precision: {:.3f}  Weighted Recall: {:.3f}\
         Weighted F score: {:.3f}".format(precision, recall, fscore))
@@ -485,11 +486,6 @@ run_config = CONFIG_BY_KEY[args.config_key]
 data = DataLoader(run_config)
 
 if __name__ == "__main__":
-
-    # %%wandb
-    if run_config.track_experiment:
-        wandb.login()
-        WANDB_NOTEBOOK_NAME = 'train.py'
 
     if run_config.speaker_independent:
         trainSpeakerIndependent(model_name=run_config.model)
